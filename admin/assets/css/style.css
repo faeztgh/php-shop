@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+:root {
+    --bone-color: #F4F1EB;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--bone-color) !important;
+    overflow-x: hidden !important;
+}
+
+
+label {
+    font-size: 1.3em;
+}
+
+
+input.form-control-sm {
+    max-height: 40px !important;
+
+}
+
+input:focus {
+    outline: 0 !important;
+    box-shadow: unset !important;
+}
+
+
+/*login form*/
+.max-width-500 {
+    max-width: 500px;
+}
+
+.max-width-600 {
+    max-width: 600px;
+}
+
+.font-sm {
+    font-size: 1em;
+}
+
+.font-md {
+    font-size: 1.5em;
+}
+
+.font-lg {
+    font-size: 2em;
+}
+
+.alert-span {
+    font-size: .9em;
+    color: red;
+}
+
+/*Bootstrap overrides*/
+.navbar-nav .dropdown-menu {
+    right: 0 !important;
+    left: unset !important;
+    float: left !important;
+
+}
+
+
