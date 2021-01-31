@@ -23,7 +23,7 @@ if (isset($_POST['register'])) {
         $repeatPassword = trim(htmlspecialchars($repeatPassword));
 
         // Check for existence query
-        $query = "SELECT user_id FROM user WHERE user_userName= :username OR user_email= :email";
+        $query = "SELECT u_id FROM t_user WHERE u_userName= :username OR u_email= :email";
 
         if ($stmt = $pdo->prepare($query)) {
             $stmt->execute(['username' => $username, 'email' => $email]);
@@ -38,7 +38,7 @@ if (isset($_POST['register'])) {
                     $error = "Your password must be more than 6 character!";
                 } else {
                     // insert into db
-                    $insertQuery = "INSERT INTO user (user_userName,user_email, user_password, user_role) 
+                    $insertQuery = "INSERT INTO t_user (u_userName,u_email, u_password, u_role) 
                             VALUES (:username,:email,:password,:role)";
 
                     if ($stmtInsert = $pdo->prepare($insertQuery)) {

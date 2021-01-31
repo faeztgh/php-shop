@@ -7,7 +7,7 @@ if (isset($_GET['p_id'])) {
     $productId = $_GET['p_id'];
 }
 
-$query = "SELECT * FROM product WHERE p_id=:productId";
+$query = "SELECT * FROM t_product WHERE p_id=:productId";
 $stmt = $pdo->prepare($query);
 $stmt->execute(['productId' => $productId]);
 
@@ -40,7 +40,7 @@ while ($row = $stmt->fetch()) {
         $p_count = trim(htmlspecialchars($_POST['p_count']));
         $p_weight = trim(htmlspecialchars($_POST['p_weight']));
         $p_brand = trim(htmlspecialchars($_POST['p_brand']));
-        $p_desc = trim(htmlspecialchars(strip_tags($_POST['p_desc'])));
+        $p_desc = trim($_POST['p_desc']);
         $p_tags = trim(htmlspecialchars($_POST['p_tags']));
         $image = $_FILES['p_img']['name'];
         $image_tmp = $_FILES['p_img']['tmp_name'];
@@ -55,7 +55,7 @@ while ($row = $stmt->fetch()) {
 
         } else {
             if ($image == '' || empty($image)) {
-                $query = "UPDATE product SET p_name=:p_name, p_category= :p_category, p_price=:p_price, p_color= :p_color, 
+                $query = "UPDATE t_product SET p_name=:p_name, p_category= :p_category, p_price=:p_price, p_color= :p_color, 
                 p_isAvailable=:p_isAvailable, p_count=:p_count, p_weight=:p_weight, p_brand=:p_brand, p_description=:p_desc,
                 p_tags=:p_tags WHERE p_id=:deleteId";
 
@@ -63,7 +63,7 @@ while ($row = $stmt->fetch()) {
                     'p_color' => $p_color, 'p_isAvailable' => $p_isAvailable, 'p_count' => $p_count, 'p_weight' => $p_weight,
                     'p_brand' => $p_brand, 'p_desc' => $p_desc, 'p_tags' => $p_tags, "deleteId" => $productId];
             } else {
-                $query = "UPDATE product SET p_name=:p_name, p_category= :p_category, p_price=:p_price, p_color= :p_color, 
+                $query = "UPDATE t_product SET p_name=:p_name, p_category= :p_category, p_price=:p_price, p_color= :p_color, 
                 p_isAvailable=:p_isAvailable, p_count=:p_count, p_weight=:p_weight, p_brand=:p_brand, p_description=:p_desc,
                 p_tags=:p_tags,p_image=:image WHERE p_id=:deleteId";
 
@@ -79,7 +79,7 @@ while ($row = $stmt->fetch()) {
                 if ($execRes) {
                     $successMsg = "Product update successfully !";
                     // if was successfull redirect to the admin page
-                    header("location: products.php");
+//                    header("location: products.php");
                 } else {
                     $error = "Something went Wrong!";
                     unset($stmt);

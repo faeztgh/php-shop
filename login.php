@@ -42,7 +42,7 @@ if (isset($_POST['login'])) {
     if (empty($username) || empty($password)) {
         $error = "Please fill all the fields!";
     } else {
-        $query = "SELECT * FROM user WHERE user_userName=:username";
+        $query = "SELECT * FROM t_user WHERE u_userName=:username";
 
         if ($stmt = $pdo->prepare($query)) {
             $stmt->execute(['username' => $username]);
@@ -53,10 +53,10 @@ if (isset($_POST['login'])) {
             } else {
 
                 if ($row = $stmt->fetch()) {
-                    $id = $row['user_id'];
-                    $role = $row['user_role'];
-                    $username = $row['user_userName'];
-                    $hashed_password = $row['user_password'];
+                    $id = $row['u_id'];
+                    $role = $row['u_role'];
+                    $username = $row['u_userName'];
+                    $hashed_password = $row['u_password'];
 
                     // validate password
                     if (password_verify($password, $hashed_password)) {
@@ -77,7 +77,7 @@ if (isset($_POST['login'])) {
                         }
                         if ($role == "user") {
                             $_SESSION['ROLE'] = "user";
-                            header("location: shop.php");
+                            header("location: index.php");
                         }
                     } else {
                         $error = "Wrong Password!";

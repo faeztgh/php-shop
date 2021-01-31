@@ -10,7 +10,7 @@
     <title><?php echo $page_title ?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="assets/css/simple-sidebar.css" rel="stylesheet">
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
     <!-- My Styles -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 

@@ -1,12 +1,20 @@
-
 <?php
 require('config/db.php');
+?>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!--My Style-->
+    <link rel="stylesheet" href="assets/css/shop.css">
+<?php
+
 $page_title = "Shop";
-include('includes/head.php');
+include('includes/navigation.php');
 ?>
 
     <!-- Page Content -->
-    <div class="container" style="text-align: left">
+    <div class="container" style="text-align: left;  ">
 
         <div class="row">
 
@@ -36,7 +44,7 @@ include('includes/head.php');
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <?php
-                        $car_query = "SELECT * FROM product";
+                        $car_query = "SELECT * FROM t_product";
 
                         $car_stmt = $pdo->prepare($car_query);
                         $car_stmt->execute();
@@ -73,7 +81,7 @@ include('includes/head.php');
                 <div class="row mt-5">
 
                     <?php
-                    $query = "SELECT * FROM product";
+                    $query = "SELECT * FROM t_product";
 
                     $stmt = $pdo->prepare($query);
                     $stmt->execute();
@@ -125,6 +133,9 @@ include('includes/head.php');
     </div>
     <!-- /.container -->
 
+<?php
+include("includes/home/footer.php");
+?>
 <?php
 include("includes/tail.php");
 ?>

@@ -9,7 +9,7 @@
 
     <!-- Local Styles -->
     <!-- Home Style -->
-    <link rel="stylesheet" href="home/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/home.css">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
@@ -24,6 +24,5 @@
 </head>
 <?php
 include('navigation.php');
-
 ?>
 <body>

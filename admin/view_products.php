@@ -28,7 +28,7 @@ include('../config/db.php');
             </thead>
             <tbody>
             <?php
-            $select_all_products_query = "SELECT * FROM product ORDER BY p_id DESC";
+            $select_all_products_query = "SELECT * FROM t_product ORDER BY p_id DESC";
             $stmt = $pdo->prepare($select_all_products_query);
             $stmt->execute();
             while ($row = $stmt->fetch()) {
@@ -78,7 +78,7 @@ include('../config/db.php');
             if (isset($_GET['delete'])) {
                 $delete_id = $_GET['delete'];
 
-                $delete_selected_pid_query = "DELETE FROM product WHERE p_id = {$delete_id}";
+                $delete_selected_pid_query = "DELETE FROM t_product WHERE p_id = {$delete_id}";
                 $dl_stmt = $pdo->prepare($delete_selected_pid_query);
 
                 if ($dl_stmt->execute()) {

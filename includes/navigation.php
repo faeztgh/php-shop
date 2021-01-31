@@ -13,10 +13,14 @@ $homeLink = " <li class='nav-item active'>
                        <a class='nav-link' href='" . BASE_URL . "'>Home <span class='sr-only'>(current)</span></a>
                   </li>";
 $username = "";
+$cart = "";
 
 
 if (isset($_SESSION['LOGGEDIN']) && $_SESSION['ROLE'] == "admin") {
     $adminLink = " <a class='dropdown-item' href='" . BASE_URL . "admin'> <i class='fa fa-user-plus'> Dashboard</i></a>";
+} else {
+    $cart = "<i class='fa fa-shopping-cart' style='font-size:24px'>&#xf07a;</i>
+            <span class='badge badge-warning' id='lblCartCount'> 5 </span>";
 }
 
 if (isset($_SESSION['LOGGEDIN'])) {
@@ -32,9 +36,21 @@ if (isset($_SESSION['LOGGEDIN'])) {
 
 ?>
 
+<link rel="stylesheet" href="assets/css/navigation.css">
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky " style="z-index: 999;top: 0;">
 
-    <div class='navbar-brand><a ' href='index.php'><img src="assets/img/logo.png" alt="Logo"></a></div>
+    <div class='navbar-brand'>
+        <a href='index.php'>
+            <?php
+            if (file_exists("assets/img/logo.png")) {
+                echo "<img src='assets/img/logo.png' alt='Logo'>";
+            } else {
+                echo "<img src='../assets/img/logo.png' alt='Logo'>";
+            }
+            ?>
+        </a>
+    </div>
     <button data-trigger="#navbar_main" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,9 +87,15 @@ if (isset($_SESSION['LOGGEDIN'])) {
                             class="sr-only">(current)</span></a>
             </li>
 
-
+            <!--Shopping cart and Badge-->
+            <li class="nav-item active">
+                <a class="nav-link" href="<?php echo BASE_URL . "user/cart.php" ?>">
+                    <i class='fa fa-shopping-cart' style='font-size:25px'></i>
+                    <span class='badge badge-danger' id='lblCartCount'> 5 </span>
+                </a>
             </li>
 
+            </li>
             <?php
             if ($username != "") {
                 echo "      <li class='nav-item dropdown'>
@@ -86,6 +108,7 @@ if (isset($_SESSION['LOGGEDIN'])) {
                      $loginLink
                      $signUpLink
                      $logoutLink
+                    
                     
                 </div>
             </li>";

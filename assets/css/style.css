@@ -70,3 +70,17 @@ input:focus {
 
 }
 
+.carousel-item {
+    height: 90vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.txt-shadow-dark{
+    text-shadow:0px 4px 20px #5d5d5d;
+}
+
