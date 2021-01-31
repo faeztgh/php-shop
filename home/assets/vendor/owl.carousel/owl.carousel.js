@@ -1237,7 +1237,7 @@
 	};
 
 	/**
-	 * Slides to the specified item.
+	 * slides to the specified item.
 	 * @public
 	 * @param {Number} position - The position of the item.
 	 * @param {Number} [speed] - The time in milliseconds for the transition.
@@ -1280,7 +1280,7 @@
 	};
 
 	/**
-	 * Slides to the next item.
+	 * slides to the next item.
 	 * @public
 	 * @param {Number} [speed] - The time in milliseconds for the transition.
 	 */
@@ -1290,7 +1290,7 @@
 	};
 
 	/**
-	 * Slides to the previous item.
+	 * slides to the previous item.
 	 * @public
 	 * @param {Number} [speed] - The time in milliseconds for the transition.
 	 */
@@ -3201,7 +3201,7 @@
 	};
 
 	/**
-	 * Slides to the next item or page.
+	 * slides to the next item or page.
 	 * @public
 	 * @param {Number} [speed=false] - The time in milliseconds for the transition.
 	 */
@@ -3210,7 +3210,7 @@
 	};
 
 	/**
-	 * Slides to the previous item or page.
+	 * slides to the previous item or page.
 	 * @public
 	 * @param {Number} [speed=false] - The time in milliseconds for the transition.
 	 */
@@ -3219,7 +3219,7 @@
 	};
 
 	/**
-	 * Slides to the specified item or page.
+	 * slides to the specified item or page.
 	 * @public
 	 * @param {Number} position - The position of the item or page.
 	 * @param {Number} [speed] - The time in milliseconds for the transition.

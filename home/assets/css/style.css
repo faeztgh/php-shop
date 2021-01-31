@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
-    transition-delay: 0 !important;
+    transition-delay: unset !important;
   }
 }
 
@@ -631,7 +631,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.6), rgba(0, 0, 0, 0.8)), url("../img/cta-bg.jpg") fixed center center;
+
   background-size: cover;
   padding: 60px 0;
 }
@@ -647,7 +647,7 @@ section {
 }
 
 .cta .cta-btn {
-  font-family: "Raleway", sans-serif;
+  font-family: inherit;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -661,8 +661,8 @@ section {
 }
 
 .cta .cta-btn:hover {
-  background: #4eb478;
-  border: 2px solid #4eb478;
+  background: #2f372e;
+  border: 2px solid #b42524;
 }
 
 /*--------------------------------------------------------------
@@ -1327,7 +1327,7 @@ section {
   font-size: 14px;
 }
 
-.contact .php-email-form input::focus, .contact .php-email-form textarea::focus {
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
   background-color: #4eb478;
 }
 

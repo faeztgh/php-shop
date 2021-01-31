@@ -66,24 +66,24 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/includes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\assets\img" />
+      <recent name="C:\xampp\htdocs\ecommerce\assets\img\features" />
+      <recent name="C:\xampp\htdocs\ecommerce\assets\img\slides" />
       <recent name="C:\xampp\htdocs\ecommerce\includes" />
       <recent name="C:\xampp\htdocs\ecommerce\user\includes" />
-      <recent name="C:\xampp\htdocs\ecommerce\user\assets\css" />
-      <recent name="C:\xampp\htdocs\ecommerce\assets\img\products" />
-      <recent name="C:\xampp\htdocs\ecommerce\admin\includes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\assets\img" />
       <recent name="C:\xampp\htdocs\ecommerce\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\admin\assets" />
       <recent name="C:\xampp\htdocs\ecommerce\assets\vendor\bootstrap" />
       <recent name="C:\xampp\htdocs\ecommerce" />
-      <recent name="C:\xampp\htdocs\ecommerce\home" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -124,7 +124,7 @@
       <workItem from="1611400557206" duration="851000" />
       <workItem from="1611766862610" duration="8623000" />
       <workItem from="1611833969004" duration="14447000" />
-      <workItem from="1611864300019" duration="50854000" />
+      <workItem from="1611864300019" duration="58021000" />
     </task>
     <servers />
   </component>

@@ -61,6 +61,7 @@ input:focus {
     color: red;
 }
 
+
 /*Bootstrap overrides*/
 .navbar-nav .dropdown-menu {
     right: 0 !important;
@@ -68,5 +69,4 @@ input:focus {
     float: left !important;
 
 }
-
 

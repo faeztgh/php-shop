@@ -1,5 +1,3 @@
-
-
 <?php
 define("BASE_URL", 'http://localhost/ecommerce/');
 
@@ -34,9 +32,9 @@ if (isset($_SESSION['LOGGEDIN'])) {
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky " style="z-index: 2;top: 0">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky " style="z-index: 999;top: 0;">
 
-    <a class='navbar-brand' href='index.php'><i class='fa fa-apple'></i></a>
+    <div class='navbar-brand><a ' href='index.php'><img src="assets/img/logo.png" alt="Logo"></a></div>
     <button data-trigger="#navbar_main" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +48,7 @@ if (isset($_SESSION['LOGGEDIN'])) {
                 <div class="input-group">
                     <input class="form-control" type="search" placeholder="Search">
                     <div class="input-group-append input-group-prepend">
-                        <button class="btn  btn-info " type="submit"><i class="fa fa-search"></i></button>
+                        <button class="btn  btn-secondary " type="submit"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
             </form>

@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Local Styles -->
+    <!-- Home Style -->
+    <link rel="stylesheet" href="home/assets/css/style.css">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
