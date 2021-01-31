@@ -1,9 +1,9 @@
+
 <?php
 require('config/db.php');
 $page_title = "Shop";
 include('includes/head.php');
 ?>
-
 
     <!-- Page Content -->
     <div class="container" style="text-align: left">
@@ -26,19 +26,38 @@ include('includes/head.php');
 
                 <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <?php
+                        $count = 7;
+                        for ($i = 0; $i < $count; $i++) {
+                            echo "<li data-target='#carouselExampleIndicators' data-slide-to='$i'></li>";
+                        }
+                        ?>
+
                     </ol>
                     <div class="carousel-inner" role="listbox">
+                        <?php
+                        $car_query = "SELECT * FROM product";
+
+                        $car_stmt = $pdo->prepare($car_query);
+                        $car_stmt->execute();
+                        while (($car_row = $car_stmt->fetch()) && ($count > 0)) {
+
+                            $name = $car_row['p_name'];
+                            $category = $car_row['p_category'];
+                            $img = $car_row['p_image'];
+
+
+                            echo "<div class='carousel-item '>
+                                      <img class='d-block img-fluid' src='assets/img/products/{$img}' alt='$name'>
+                                  </div>";
+
+                            $count--;
+
+                        }
+                        ?>
+
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                            <img class="d-block img-fluid" src="assets/img/products/1.jpg" alt="First slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -51,7 +70,7 @@ include('includes/head.php');
                     </a>
                 </div>
 
-                <div class="row">
+                <div class="row mt-5">
 
                     <?php
                     $query = "SELECT * FROM product";
@@ -88,8 +107,9 @@ include('includes/head.php');
                                             <a href='' class='btn btn-link'>Read more</a>
                                         </p>
                                         </div>
-                                    <div class='card-footer'>
-                                        <small class='text-muted'>&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                    <div class='card-footer d-flex justify-content-between'>
+                                        <small class='text-muted align-self-end'>&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                  <button class='btn btn-outline-primary'>Add to Cart <i class='fa fa-shopping-cart'></i></button>
                                     </div>
                                 </div>
                             </div>";

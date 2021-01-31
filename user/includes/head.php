@@ -10,18 +10,19 @@
     <!-- Local Styles -->
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/simple-sidebar.css" rel="stylesheet">
     <!-- Font Awesome-->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
 
     <!-- My Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <title><?php echo $page_title ?></title>
 </head>
 <?php
-include('navigation.php');
+include('../includes/navigation.php');
 
 ?>
 <body>

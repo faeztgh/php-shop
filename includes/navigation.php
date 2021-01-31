@@ -1,3 +1,5 @@
+
+
 <?php
 define("BASE_URL", 'http://localhost/ecommerce/');
 
@@ -32,17 +34,8 @@ if (isset($_SESSION['LOGGEDIN'])) {
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <?php
-    if (isset($_SESSION)) {
-        if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == "admin") {
-            $currUrl=substr($_SERVER['REQUEST_URI'],0, 17);
-            if ($currUrl === "/ecommerce/admin/") {
-                echo "<button class='btn' id='menu-toggle'><i style='font-size: 1.8rem;color: white;_' class='fa fa-arrows-h'></i></button>";
-            }
-        }
-    }
-    ?>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky " style="z-index: 2;top: 0">
+
     <a class='navbar-brand' href='index.php'><i class='fa fa-apple'></i></a>
     <button data-trigger="#navbar_main" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -76,7 +69,8 @@ if (isset($_SESSION['LOGGEDIN'])) {
                 echo $homeLink;
                 ?>
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo BASE_URL."shop.php"?>">Shop <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?php echo BASE_URL . "shop.php" ?>">Shop <span
+                            class="sr-only">(current)</span></a>
             </li>
 
 
@@ -108,11 +102,9 @@ if (isset($_SESSION['LOGGEDIN'])) {
                     $loginLink
                     $signUpLink
                     $logoutLink
-               
-                </div>
+                 </div>
             </li>";
             }
-
 
             ?>
         </ul>

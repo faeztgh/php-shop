@@ -8,7 +8,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     background: var(--bone-color) !important;
-    overflow-x: hidden !important;
 }
 
 
@@ -63,3 +62,6 @@ input:focus {
 }
 
 
+table td {
+    padding: 0 !important;
+}

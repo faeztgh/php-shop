@@ -15,7 +15,7 @@ function setupSession()
     if (!isset($_SESSION)) {
         session_start();
     } else {
-        header("location: ../login.php");
+        header("location: login.php");
     }
 
     if (isset($_SESSION)) {
@@ -25,10 +25,10 @@ function setupSession()
 
         if (isset($_SESSION["LOGGEDIN"]) && $_SESSION['LOGGEDIN'] == true) {
             if ($_SESSION['ROLE'] == "user") {
-                header('location: ../login.php');
+                header('location: login.php');
             }
         } else {
-            header('location: ../login.php');
+            header('location: login.php');
         }
     }
     $_SESSION['LAST_ACTIVITY'] = time();

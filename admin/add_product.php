@@ -6,7 +6,6 @@ include('../config/db.php');
 $error = $successMsg = "";
 if (isset($_POST['addProduct'])) {
 
-
     $p_name = trim(htmlspecialchars($_POST['p_name']));
     $p_category = trim(htmlspecialchars($_POST['p_category']));
     $p_price = trim(htmlspecialchars($_POST['p_price']));
@@ -15,7 +14,7 @@ if (isset($_POST['addProduct'])) {
     $p_count = trim(htmlspecialchars($_POST['p_count']));
     $p_weight = trim(htmlspecialchars($_POST['p_weight']));
     $p_brand = trim(htmlspecialchars($_POST['p_brand']));
-    $p_desc = trim(htmlspecialchars(strip_tags($_POST['p_desc'])));
+    $p_desc = trim($_POST['p_desc']);
     $p_tags = trim(htmlspecialchars($_POST['p_tags']));
     $image = $_FILES['p_img']['name'];
     $image_tmp = $_FILES['p_img']['tmp_name'];
@@ -42,7 +41,7 @@ if (isset($_POST['addProduct'])) {
             if ($execRes) {
                 // if was successfull redirect to the admin page
                 $successMsg = "Product added successfully !";
-                header("location: " . $_SERVER['REQUEST_URI'] . "");
+                header("location: products.php");
             } else {
                 $error = "Something went Wrong!";
             }
@@ -54,115 +53,97 @@ if (isset($_POST['addProduct'])) {
 unset($pdo);
 ?>
 
-<?php
-$page_title = "Add Product";
-include('../includes/head.php');
-?>
 
-<div class="container-fluid">
+<form class="mt-5 pt-5mb-5 pb-5 " action="" method="post" enctype="multipart/form-data">
 
-    <div class="animated fadeIn">
-        <div class="row align-items-center justify-content-center">
+    <?php
+    if (!empty($error)) {
+        echo " <div class='alert alert-danger'>$error</div>";
+    }
 
-            <div class="col-lg-4 col-md-6 col-xs-12">
+    if (!empty($successMsg)) {
+        echo "<div class='alert alert-success'>$successMsg</div>";
+    }
+    ?>
 
-                <form class="mt-5 pt-5mb-5 pb-5 " action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
-                      enctype="multipart/form-data">
-
-                    <?php
-                    if (!empty($error)) {
-                        echo " <div class='alert alert-danger'>$error</div>";
-                    }
-
-                    if (!empty($successMsg)) {
-                        echo "<div class='alert alert-success'>$successMsg</div>";
-                    }
-                    ?>
-
-                    <div class="form-group">
-                        <label for="">Product Name</label>
-                        <input type="text" name="p_name" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Category</label>
-                        <select class="form-control" name="p_category" id="">
-                            <option value="mobile">Mobile</option>
-                            <option value="laptop">Laptop</option>
-                            <option value="tablet">Tablet</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Price</label>
-                        <input type="text" name="p_price" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Color</label>
-                        <input type="text" name="p_color" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Size</label>
-                        <input type="text" name="p_size" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Is Available</label>
-                        <select type="text" name="p_isAvailable" class="form-control">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Count</label>
-                        <input type="number" name="p_count" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Weight</label>
-                        <input type="number" name="p_weight" class="form-control">
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="">Brand</label>
-                        <input type="text" name="p_brand" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Description</label>
-                        <textarea type="text" name="p_desc" class="form-control" rows="20" id="ck-editor"></textarea>
-                    </div>
-
-
-                    <label for="">Product Image</label>
-                    <div class="input-group mb-3">
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                            <input type="file" class="custom-file-input" name="p_img" id="inputGroupFile01">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Tag's</label>
-                        <input type="text" name="p_tags" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <button class="btn btn-primary" name="addProduct" type="submit">ADD</button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-        <!--/row-->
+    <div class="form-group">
+        <label for="">Product Name</label>
+        <input type="text" name="p_name" class="form-control">
     </div>
 
-</div>
-<!--/.container-fluid-->
+    <div class="form-group">
+        <label for="">Category</label>
+        <select class="form-control" name="p_category" id="">
+            <option value="mobile">Mobile</option>
+            <option value="laptop">Laptop</option>
+            <option value="tablet">Tablet</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Price</label>
+        <input type="text" name="p_price" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="">Color</label>
+        <input type="text" name="p_color" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="">Size</label>
+        <input type="text" name="p_size" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="">Is Available</label>
+        <select type="text" name="p_isAvailable" class="form-control">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Count</label>
+        <input type="number" name="p_count" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="">Weight</label>
+        <input type="number" name="p_weight" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Brand</label>
+        <input type="text" name="p_brand" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="">Description</label>
+        <textarea type="text" name="p_desc" class="form-control" rows="20" id="ck-editor"></textarea>
+    </div>
+
+
+    <label for="">Product Image</label>
+    <div class="input-group mb-3">
+        <div class="custom-file">
+            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            <input type="file" class="custom-file-input" name="p_img" id="inputGroupFile01">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Tag's</label>
+        <textarea type="text" rows="5" name="p_tags" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary" name="addProduct" type="submit">ADD</button>
+    </div>
+
+</form>
+
 <?php
 include('includes/tail.php')
 ?>
