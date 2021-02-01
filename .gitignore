@@ -1,2 +1,6 @@
 /assets
 assets/
+.idea
+*.png
+*.jpg
+image

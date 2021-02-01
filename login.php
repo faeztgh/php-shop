@@ -77,6 +77,7 @@ if (isset($_POST['login'])) {
                         }
                         if ($role == "user") {
                             $_SESSION['ROLE'] = "user";
+                            $_SESSION['CART']['USER_ID'] = $id;
                             header("location: index.php");
                         }
                     } else {

@@ -7,7 +7,9 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$cartCount = isset($_SESSION['CART']) ? count($_SESSION['CART']) : 0;
+$cartCount = isset($_SESSION['CART']) && $_SESSION['CART']['USER_ID'] == $_SESSION['ID'] ? (count($_SESSION['CART'])-1) : 0;
+
+
 
 $adminLink = "";
 $userLink = "";

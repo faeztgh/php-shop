@@ -3,20 +3,23 @@ require('../config/db.php');
 //Setting up cart
 $productId = $quantity = "";
 $productIdsArray = array();
-if (isset($_POST['addToCartSubmit'], $_POST['product_id'])) {
-
-    $productId = $_POST['product_id'];
-    $quantity = 1;
-
-
-}
 if (!isset($_SESSION)) {
     session_start();
+}
+
+if (!isset($_SESSION['LOGGEDIN']) && $_SESSION['LOGGEDIN'] == false) {
+    header("location: ../login.php");
+}
+
+if (isset($_POST['addToCartSubmit'], $_POST['product_id'])) {
+    $productId = $_POST['product_id'];
+    $quantity = 1;
 }
 
 
 if ($quantity > 0) {
     if (isset($_SESSION['CART']) && is_array($_SESSION['CART'])) {
+
         if (array_key_exists($productId, $_SESSION['CART'])) {
             $_SESSION['CART'][$productId] += $quantity;
         } else {
@@ -27,11 +30,12 @@ if ($quantity > 0) {
     }
 }
 
+
 // get products in the cart
 $productsInCart = isset($_SESSION['CART']) ? $_SESSION['CART'] : array();
 $products = array();
 $totalPrice = 0.0;
-$totalItem = count($_SESSION['CART']);
+$totalItem = count($_SESSION['CART']) - 1;
 
 if ($productsInCart) {
     $array_to_question_marks = implode(',', array_fill(0, count($productsInCart), '?'));
@@ -79,24 +83,26 @@ if (isset($_POST['checkout'])) {
     } else {
         echo "No product exist";
     }
+
 }
+
 
 ?>
 <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/cart.css">
 <div class="card">
-    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-        <div class="row">
-            <div class="col-md-8 cart">
-                <div class="title">
-                    <div class="row">
-                        <div class="col">
-                            <h4><b>Shopping Cart</b></h4>
-                        </div>
-                        <div class="col align-self-center text-right text-muted">Items: <?php echo $totalItem ?></div>
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title">
+                <div class="row">
+                    <div class="col">
+                        <h4><b>Shopping Cart</b></h4>
                     </div>
+                    <div class="col align-self-center text-right text-muted">Items: <?php echo $totalItem ?></div>
                 </div>
+            </div>
 
+            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
                 <?php
                 if (empty($products)) {
                     echo "
@@ -143,30 +149,31 @@ if (isset($_POST['checkout'])) {
                 }
                 ?>
 
-                <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
-            </div>
-            <div class="col-md-4 summary">
-                <div>
-                    <h5><b>Summary</b></h5>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col" style="padding-left:0;">Total Items: <?php echo $totalItem ?></div>
-                    <div class="col text-right">&euro; <?php echo $totalPrice ?></div>
-                </div>
-                <form>
-                    <p>SHIPPING</p>
-                    <select class="mb-5">
-                        <option class="text-muted">Standard-Delivery- &euro;5.00</option>
-                    </select>
-                    <p>GIVE CODE</p> <input id="code" placeholder="Enter your code">
-                </form>
-                <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                    <div class="col">TOTAL PRICE</div>
-                    <div class="col text-right">&euro; <?php echo $totalPrice ?></div>
-                </div>
-                <button class="btn" type="submit" name="checkout">CHECKOUT</button>
-            </div>
         </div>
-    </form>
+        <div class="col-md-4 summary">
+            <div>
+                <h5><b>Summary</b></h5>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col" style="padding-left:0;">Total Items: <?php echo $totalItem ?></div>
+                <div class="col text-right">&euro; <?php echo $totalPrice ?></div>
+            </div>
+            <form>
+                <p class="mt-5">SHIPPING</p>
+                <select class="mb-5">
+                    <option class="text-muted">Standard-Delivery- &euro;5.00</option>
+                </select>
+                <p>GIVE CODE</p> <input id="code" placeholder="Enter your code">
+            </form>
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">TOTAL PRICE</div>
+                <div class="col text-right">&euro; <?php echo $totalPrice ?></div>
+            </div>
+
+            <button class="btn btn-dark w-100" type="submit" name="checkout">CHECKOUT</button>
+            <a class="btn btn-outline-dark w-100 mt-2" href="../shop.php">Continue Shopping</a>
+        </div>
+        </form>
+    </div>
 </div>
