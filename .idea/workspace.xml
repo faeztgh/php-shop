@@ -45,7 +45,7 @@
         <item name="ecommerce@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ecommerce: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="product: table" type="dbc44a63:MariaImplModel$Table" />
+        <item name="t_order: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -124,7 +124,7 @@
       <workItem from="1611400557206" duration="851000" />
       <workItem from="1611766862610" duration="8623000" />
       <workItem from="1611833969004" duration="14447000" />
-      <workItem from="1611864300019" duration="62912000" />
+      <workItem from="1611864300019" duration="84110000" />
     </task>
     <servers />
   </component>
