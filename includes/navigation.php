@@ -1,11 +1,16 @@
 <?php
 define("BASE_URL", 'http://localhost/ecommerce/');
 
+
+// setting up cart count
 if (!isset($_SESSION)) {
     session_start();
 }
 
+$cartCount = isset($_SESSION['CART']) ? count($_SESSION['CART']) : 0;
+
 $adminLink = "";
+$userLink = "";
 $logoutLink = "";
 $loginLink = "<a class='dropdown-item' href='login.php'><i class='fa fa-user'></i> Login</a>";
 $signUpLink = "<a class='dropdown-item' href='signup.php'> <i class='fa fa-user-plus'> Signup</i></a>";
@@ -18,9 +23,15 @@ $cart = "";
 
 if (isset($_SESSION['LOGGEDIN']) && $_SESSION['ROLE'] == "admin") {
     $adminLink = " <a class='dropdown-item' href='" . BASE_URL . "admin'> <i class='fa fa-user-plus'> Dashboard</i></a>";
-} else {
-    $cart = "<i class='fa fa-shopping-cart' style='font-size:24px'>&#xf07a;</i>
-            <span class='badge badge-warning' id='lblCartCount'> 5 </span>";
+}
+
+if (isset($_SESSION['LOGGEDIN']) && $_SESSION['ROLE'] == "user") {
+
+    $cart = "<i class='fa fa-shopping-cart' style='font-size:25px'></i>
+             <span class='badge badge-danger' id='lblCartCount'> $cartCount </span>";
+
+    $userLink = " <a class='dropdown-item' href='" . BASE_URL . "user'> <i class='fa fa-user-plus'> Panel</i></a>";
+
 }
 
 if (isset($_SESSION['LOGGEDIN'])) {
@@ -88,10 +99,15 @@ if (isset($_SESSION['LOGGEDIN'])) {
             </li>
 
             <!--Shopping cart and Badge-->
+            <?php
+            if ($cart != "") {
+            ?>
             <li class="nav-item active">
                 <a class="nav-link" href="<?php echo BASE_URL . "user/cart.php" ?>">
-                    <i class='fa fa-shopping-cart' style='font-size:25px'></i>
-                    <span class='badge badge-danger' id='lblCartCount'> 5 </span>
+                    <?php
+                    echo $cart;
+                    }
+                    ?>
                 </a>
             </li>
 
@@ -105,11 +121,10 @@ if (isset($_SESSION['LOGGEDIN'])) {
                 </a>
                 <div class='dropdown-menu' aria-labelledby='navbarDropdown' style='right: 0'>
                      $adminLink
+                     $userLink
                      $loginLink
                      $signUpLink
                      $logoutLink
-                    
-                    
                 </div>
             </li>";
 
