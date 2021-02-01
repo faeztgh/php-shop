@@ -11,7 +11,9 @@ require('config/db.php');
 
 $page_title = "Shop";
 include('includes/navigation.php');
+
 ?>
+
 
     <!-- Page Content -->
     <div class="container" style="text-align: left;  ">
@@ -87,7 +89,7 @@ include('includes/navigation.php');
                     $stmt->execute();
 
                     while ($productRow = $stmt->fetch()) {
-
+                        $id = $productRow['p_id'];
                         $name = $productRow['p_name'];
                         $category = $productRow['p_category'];
                         $img = $productRow['p_image'];
@@ -117,7 +119,10 @@ include('includes/navigation.php');
                                         </div>
                                     <div class='card-footer d-flex justify-content-between'>
                                         <small class='text-muted align-self-end'>&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                  <button class='btn btn-outline-primary'>Add to Cart <i class='fa fa-shopping-cart'></i></button>
+                                 <form action='user/cart.php' method='post'>
+                                 <input type='hidden' name='product_id' value='{$id}'>
+                                       <button class='btn btn-outline-primary' type='submit' name='addToCartSubmit'>Add to Cart <i class='fa fa-shopping-cart'></i></button>
+                                 </form>
                                     </div>
                                 </div>
                             </div>";
@@ -132,6 +137,7 @@ include('includes/navigation.php');
         <!-- /.row -->
     </div>
     <!-- /.container -->
+
 
 <?php
 include("includes/home/footer.php");
