@@ -1,5 +1,6 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 require('../config/db.php');
 //Setting up cart
 $productId = $quantity = "";
@@ -90,6 +91,8 @@ if (isset($_POST['checkout'])) {
 
 =======
 >>>>>>> parent of 3a2e5c1... make cart
+=======
+>>>>>>> parent of 3a2e5c1... make cart
 ?>
 <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/cart.css">
@@ -101,6 +104,7 @@ if (isset($_POST['checkout'])) {
                     <div class="col">
                         <h4><b>Shopping Cart</b></h4>
                     </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <div class="col align-self-center text-right text-muted">Items: <?php echo $totalItem ?></div>
                 </div>
@@ -186,6 +190,13 @@ if (isset($_POST['checkout'])) {
             <div class="row border-top border-bottom">
                 <div class="row main align-items-center">
                     <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/1GrakTl.jpg"></div>
+=======
+                    <div class="col align-self-center text-right text-muted">3 items</div>
+                </div>
+            </div>
+            <div class="row border-top border-bottom">
+                <div class="row main align-items-center">
+                    <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/1GrakTl.jpg"></div>
                     <div class="col">
                         <div class="row text-muted">Shirt</div>
                         <div class="row">Cotton T-shirt</div>
@@ -197,6 +208,7 @@ if (isset($_POST['checkout'])) {
             <div class="row">
                 <div class="row main align-items-center">
                     <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/ba3tvGm.jpg"></div>
+>>>>>>> parent of 3a2e5c1... make cart
                     <div class="col">
                         <div class="row text-muted">Shirt</div>
                         <div class="row">Cotton T-shirt</div>
@@ -205,6 +217,20 @@ if (isset($_POST['checkout'])) {
                     <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
                 </div>
             </div>
+<<<<<<< HEAD
+            <div class="row">
+                <div class="row main align-items-center">
+                    <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/ba3tvGm.jpg"></div>
+                    <div class="col">
+                        <div class="row text-muted">Shirt</div>
+                        <div class="row">Cotton T-shirt</div>
+                    </div>
+                    <div class="col"><a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a></div>
+                    <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
+                </div>
+            </div>
+=======
+>>>>>>> parent of 3a2e5c1... make cart
             <div class="row border-top border-bottom">
                 <div class="row main align-items-center">
                     <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/pHQ3xT3.jpg"></div>
@@ -239,6 +265,9 @@ if (isset($_POST['checkout'])) {
             </div>
             <button class="btn">CHECKOUT</button>
         </div>
+<<<<<<< HEAD
+>>>>>>> parent of 3a2e5c1... make cart
+=======
 >>>>>>> parent of 3a2e5c1... make cart
     </div>
 </div>
