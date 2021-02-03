@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
 require('../config/db.php');
 //Setting up cart
 $productId = $quantity = "";
@@ -88,8 +88,7 @@ if (isset($_POST['checkout'])) {
 }
 
 
-=======
->>>>>>> parent of 3a2e5c1... make cart
+
 ?>
 <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/cart.css">

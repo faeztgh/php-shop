@@ -7,8 +7,11 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$cartCount = isset($_SESSION['CART']) && $_SESSION['CART']['USER_ID'] == $_SESSION['ID'] ? (count($_SESSION['CART'])-1) : 0;
-
+if (isset($_SESSION['CART'], $_SESSION['CART']['USER_ID']) && $_SESSION['CART']['USER_ID'] == $_SESSION['ID']) {
+    $cartCount = count($_SESSION['CART']) - 1;
+} else {
+    $cartCount = 0;
+}
 
 
 $adminLink = "";
@@ -49,7 +52,7 @@ if (isset($_SESSION['LOGGEDIN'])) {
 
 ?>
 
-<link rel="stylesheet" href="assets/css/navigation.css">
+<link rel="stylesheet" href="assets/css/navigation.css?v=2">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky " style="z-index: 999;top: 0;">
 
@@ -73,14 +76,7 @@ if (isset($_SESSION['LOGGEDIN'])) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <ul class="navbar-nav ml-auto">
-            <form class="form-inline my-2 my-lg-0 mx-5" method="get">
-                <div class="input-group">
-                    <input class="form-control" type="search" placeholder="Search">
-                    <div class="input-group-append input-group-prepend">
-                        <button class="btn  btn-secondary " type="submit"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-            </form>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
@@ -146,5 +142,6 @@ if (isset($_SESSION['LOGGEDIN'])) {
 
             ?>
         </ul>
+
     </div>
 </nav>

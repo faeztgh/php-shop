@@ -8,13 +8,14 @@
                     <img src="assets/img/features/laptop-1.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <i class="bx bx-tachometer"></i>
-                        <h5 class="card-title"><a href="">Laptop</a></h5>
+                        <h5 class="card-title"><a href="results.php?cat=laptop">Laptop</a></h5>
                         <p class="card-text">Our Laptops are one and only in the world and no company
                             can get even close to us
                         </p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-outline-dark">Go To Tablets <i class="fa fa-arrow-right"></i></button>
+                        <a class="btn btn-outline-dark" href="results.php?cat=laptop">Go To Laptops <i
+                                    class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -23,12 +24,13 @@
                     <img src="assets/img/features/phone-1.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <i class="bx bx-file"></i>
-                        <h5 class="card-title"><a href="">Phone</a></h5>
+                        <h5 class="card-title"><a href="results.php?cat=mobile">Phone</a></h5>
                         <p class="card-text">Our Smart Phones are one and only in the world and no company
                             can get even close to us. We provide our special os for phones</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-outline-dark">Go To Tablets <i class="fa fa-arrow-right"></i></button>
+                        <a class="btn btn-outline-dark" href="results.php?cat=mobile">Go To Phones <i
+                                    class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -37,13 +39,14 @@
                     <img src="assets/img/features/tablet-1.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <i class="bx bx-show"></i>
-                        <h5 class="card-title"><a href="">Tablets</a></h5>
+                        <h5 class="card-title"><a href="results.php?cat=tablet">Tablets</a></h5>
                         <p class="card-text">Our Tablets are one and only in the world and no company
                             can get even close to us. We provide our special os for Tablets with special pen with it.
                             Out tablets are best for designing</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-outline-dark">Go To Tablets <i class="fa fa-arrow-right"></i></button>
+                        <a class="btn btn-outline-dark" href="results.php?cat=tablet">Go To Tablets <i
+                                    class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

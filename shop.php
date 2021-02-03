@@ -8,25 +8,24 @@ require('config/db.php');
     <!--My Style-->
     <link rel="stylesheet" href="assets/css/shop.css">
 <?php
-
 $page_title = "Shop";
 include('includes/navigation.php');
-
 ?>
+    <link rel="stylesheet" href="assets/css/neon.css">
 
 
     <!-- Page Content -->
     <div class="container" style="text-align: left;  ">
 
         <div class="row">
-
             <div class="col-lg-3">
-
-                <h1 class="my-4">Shop Name</h1>
+                <?php
+                include('includes/neon_shop_name.php');
+                ?>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
+                    <a href="results.php?cat=laptop" class="list-group-item">Laptop</a>
+                    <a href="results.php?cat=mobile" class="list-group-item">Phone</a>
+                    <a href="results.php?cat=tablet" class="list-group-item">Tablet</a>
                 </div>
 
             </div>
@@ -107,7 +106,7 @@ include('includes/navigation.php');
 
                         echo " <div class='col-lg-4 col-md-6 mb-4'>
                                    <div class='card h-100'>
-                                    <a href=''><img class='card-img-top' src='assets/img/products/{$img}' alt='$name'></a>
+                                    <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name'></a>
                                        <div class='card-body'>
                                        <h4 class='card-title'>
                                            <a href=''>$name</a>
