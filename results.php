@@ -1,11 +1,22 @@
 <?php
 include('config/db.php');
 
+if (isset($_GET['search']) && empty($_GET['search'])) {
+    header('location: index.php');
+}
+
 if (isset($_GET['cat'])) {
     $page_title = $_GET['cat'];
 }
-include('includes/head.php');
+if (isset($_GET['search'])) {
+    $page_title = "Results for: " . $_GET['search'];
+}
 
+$message = "";
+?>
+
+<?php
+include('includes/head.php');
 ?>
 
 <!-- Page Content -->
@@ -28,11 +39,30 @@ include('includes/head.php');
 
                 <?php
                 if (isset($_GET)) {
-                    $cat = $_GET['cat'];
-                    $query = "SELECT * FROM t_product WHERE p_category=:category";
+                    if (isset($_GET['cat'])) {
+                        $cat = trim($_GET['cat']);
+                        $query = "SELECT * FROM t_product WHERE p_category=:category";
+                        $stmt = $pdo->prepare($query);
+                        $exec = $stmt->execute(['category' => $cat]);
+                    }
 
-                    $stmt = $pdo->prepare($query);
-                    $exec = $stmt->execute(['category' => $cat]);
+                    if (isset($_GET['search'])) {
+                        $searchInput = trim($_GET['search']);
+                        $query = "SELECT * FROM t_product WHERE p_name LIKE :searchInput 
+                                UNION 
+                                SELECT * FROM t_product WHERE p_category LIKE :searchInput 
+                                UNION 
+                                SELECT * FROM t_product WHERE p_description LIKE :searchInput 
+                                UNION 
+                                SELECT * FROM t_product WHERE p_brand LIKE :searchInput 
+                        ";
+                        $stmt = $pdo->prepare($query);
+                        $exec = $stmt->execute(['searchInput' => "%" . $searchInput . "%"]);
+                    } else {
+                        return;
+                    }
+
+
                     if ($exec) {
                         while ($productRow = $stmt->fetch()) {
                             $id = $productRow['p_id'];
@@ -56,11 +86,11 @@ include('includes/head.php');
                                     <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name'></a>
                                        <div class='card-body'>
                                        <h4 class='card-title'>
-                                           <a href=''>$name</a>
+                                           <a href='single_product.php?id={$id}'>$name</a>
                                        </h4>
                                        <h5>$$price</h5>
                                         <p class='card-text'>$desc ... 
-                                            <a href='' class='btn btn-link'>Read more</a>
+                                            <a href='single_product.php?id={$id}' class='btn btn-link'>Read more</a>
                                         </p>
                                         </div>
                                     <div class='card-footer d-flex justify-content-between'>
@@ -73,12 +103,23 @@ include('includes/head.php');
                                 </div>
                             </div>";
                         }
+
                     }
                 }
+
                 ?>
             </div>
         </div>
     </div>
+    <?php
+    if ($stmt->rowCount() <= 0) {
+        if (isset($_GET['cat'])) {
+            echo "<div class='alert alert-info text-center'>No Result Found for \" $_GET[cat] \"</div>";
+        } else if (isset($_GET['search'])) {
+            echo "<div class='alert alert-info text-center'>No Result Found for \" $_GET[search] \"</div>";
+        }
+    }
+    ?>
 </div>
 
 <!-- /.row -->

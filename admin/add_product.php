@@ -13,12 +13,16 @@ if (isset($_POST['addProduct'])) {
     $p_isAvailable = trim(htmlspecialchars($_POST['p_isAvailable']));
     $p_count = trim(htmlspecialchars($_POST['p_count']));
     $p_weight = trim(htmlspecialchars($_POST['p_weight']));
+    $p_size = trim(htmlspecialchars($_POST['p_size']));
     $p_brand = trim(htmlspecialchars($_POST['p_brand']));
     $p_desc = trim($_POST['p_desc']);
     $p_tags = trim(htmlspecialchars($_POST['p_tags']));
     $image = $_FILES['p_img']['name'];
     $image_tmp = $_FILES['p_img']['tmp_name'];
 
+    if (empty($p_size)) {
+        $p_size = "(not provided)";
+    }
 
     move_uploaded_file($image_tmp, "../assets/img/products/" . $image);
 
@@ -29,14 +33,14 @@ if (isset($_POST['addProduct'])) {
     } else {
         $query = "INSERT INTO t_product (p_name, p_category, p_price, p_color, 
                 p_isAvailable, p_count, p_weight, p_brand, p_description,
-                p_tags,p_image) 
+                p_tags,p_image,p_size) 
                 VALUES (:p_name, :p_category, :p_price, :p_color, :p_isAvailable,
-                 :p_count, :p_weight, :p_brand, :p_desc,:p_tags,:image)";
+                 :p_count, :p_weight, :p_brand, :p_desc,:p_tags,:image,:p_size)";
 
         if ($stmt = $pdo->prepare($query)) {
             $execRes = $stmt->execute(['p_name' => $p_name, 'p_category' => $p_category, 'p_price' => $p_price,
                 'p_color' => $p_color, 'p_isAvailable' => $p_isAvailable, 'p_count' => $p_count, 'p_weight' => $p_weight,
-                'p_brand' => $p_brand, 'p_desc' => $p_desc, 'p_tags' => $p_tags, 'image' => $image]);
+                'p_brand' => $p_brand, 'p_desc' => $p_desc, 'p_tags' => $p_tags, 'image' => $image, 'p_size' => $p_size]);
 
             if ($execRes) {
                 // if was successfull redirect to the admin page

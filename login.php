@@ -25,6 +25,7 @@ if (!isset($_SESSION)) {
 }
 
 if (isset($_SESSION)) {
+
     if (isset($_SESSION['LOGGEDIN']) && $_SESSION['LOGGEDIN'] === true) {
         if ($_SESSION['ROLE'] === "admin") {
             header("location: admin/index.php");

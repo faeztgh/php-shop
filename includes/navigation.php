@@ -1,4 +1,5 @@
 <?php
+
 define("BASE_URL", 'http://localhost/ecommerce/');
 
 
@@ -27,7 +28,7 @@ $cart = "";
 
 
 if (isset($_SESSION['LOGGEDIN']) && $_SESSION['ROLE'] == "admin") {
-    $adminLink = " <a class='dropdown-item' href='" . BASE_URL . "admin'> <i class='fa fa-user-plus'> Dashboard</i></a>";
+    $adminLink = " <a class='dropdown-item' href='" . BASE_URL . "admin/products.php'> <i class='fa fa-user-plus'> Dashboard</i></a>";
 }
 
 if (isset($_SESSION['LOGGEDIN']) && $_SESSION['ROLE'] == "user") {
@@ -35,7 +36,7 @@ if (isset($_SESSION['LOGGEDIN']) && $_SESSION['ROLE'] == "user") {
     $cart = "<i class='fa fa-shopping-cart' style='font-size:25px'></i>
              <span class='badge badge-danger' id='lblCartCount'> $cartCount </span>";
 
-    $userLink = " <a class='dropdown-item' href='" . BASE_URL . "user'> <i class='fa fa-user-plus'> Panel</i></a>";
+    $userLink = " <a class='dropdown-item' href='" . BASE_URL . "user/index.php'> <i class='fa fa-user-plus'> Panel</i></a>";
 
 }
 

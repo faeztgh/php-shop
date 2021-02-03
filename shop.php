@@ -109,11 +109,11 @@ include('includes/navigation.php');
                                     <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name'></a>
                                        <div class='card-body'>
                                        <h4 class='card-title'>
-                                           <a href=''>$name</a>
+                                           <a href='single_product.php?id={$id}'>$name</a>
                                        </h4>
                                        <h5>$$price</h5>
                                         <p class='card-text'>$desc ... 
-                                            <a href='' class='btn btn-link'>Read more</a>
+                                            <a href='single_product.php?id={$id}' class='btn btn-link'>Read more</a>
                                         </p>
                                         </div>
                                     <div class='card-footer d-flex justify-content-between'>

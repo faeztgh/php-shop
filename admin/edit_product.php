@@ -106,81 +106,94 @@ while ($row = $stmt->fetch()) {
         }
         ?>
 
-        <div class="form-group">
-            <label for="">Product Name</label>
-            <input type="text" name="p_name" class="form-control" value="<?php echo $product_name ?>">
-        </div>
-
-        <div class="form-group">
-            <label for="">Category</label>
-            <select class="form-control" name="p_category" id="">
-                <option value="mobile">Mobile</option>
-                <option value="laptop">Laptop</option>
-                <option value="tablet">Tablet</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="">Price</label>
-            <input type="text" name="p_price" class="form-control" value="<?php echo $product_price ?>">
-        </div>
-
-        <div class="form-group">
-            <label for="">Color</label>
-            <input type="text" name="p_color" class="form-control" value="<?php echo $product_color ?>">
-        </div>
-
-        <div class="form-group">
-            <label for="">Size</label>
-            <input type="text" name="p_size" class="form-control" value="<?php echo $product_size ?>">
-        </div>
-
-        <div class="form-group">
-            <label for="">Is Available</label>
-            <select type="text" name="p_isAvailable" class="form-control">
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="">Count</label>
-            <input type="number" name="p_count" class="form-control" value="<?php echo $product_count ?>">
-        </div>
-
-        <div class="form-group">
-            <label for="">Weight</label>
-            <input type="number" name="p_weight" class="form-control" value="<?php echo $product_weight ?>">
-        </div>
-
-
-        <div class="form-group">
-            <label for="">Brand</label>
-            <input type="text" name="p_brand" class="form-control" value="<?php echo $product_brand ?>">
-        </div>
-
-        <div class="form-group">
-            <label for="">Description</label>
-            <textarea type="text" name="p_desc" class="form-control" id="ck-editor">
-                <?php echo $product_desc ?>
-            </textarea>
-        </div>
-
-
-        <label for="">Product Image</label>
-        <div class="input-group mb-3">
-            <div class="custom-file">
-                <label class="custom-file-label" for="inputGroupFile01"><?php echo $product_image ?></label>
-                <input type="file" class="custom-file-input" name="p_img" id="inputGroupFile01">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Product Name</label>
+                    <input type="text" name="p_name" class="form-control" value="<?php echo $product_name ?>">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Category</label>
+                    <select class="form-control" name="p_category" id="">
+                        <option value="mobile">Mobile</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="tablet">Tablet</option>
+                    </select>
+                </div>
             </div>
         </div>
 
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="">Price</label>
+                <input type="text" name="p_price" class="form-control" value="<?php echo $product_price ?>">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="">Color</label>
+                <input type="text" name="p_color" class="form-control" value="<?php echo $product_color ?>">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="">Size</label>
+                <input type="text" name="p_size" class="form-control" value="<?php echo $product_size ?>">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="">Is Available</label>
+                <select type="text" name="p_isAvailable" class="form-control">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="">Count</label>
+                <input type="number" name="p_count" class="form-control" value="<?php echo $product_count ?>">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="">Weight</label>
+                <input type="number" name="p_weight" class="form-control" value="<?php echo $product_weight ?>">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="">Brand</label>
+                <input type="text" name="p_brand" class="form-control" value="<?php echo $product_brand ?>">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="">Product Image</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="inputGroupFile01"><?php echo $product_image ?></label>
+                        <input type="file" class="custom-file-input" name="p_img" id="inputGroupFile01">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group mt-5">
+            <label for="">Description</label>
+            <textarea type="text" name="p_desc" class="form-control" rows="20"
+                      id="ck-editor"><?php echo $product_desc ?></textarea>
+        </div>
+
+
         <div class="form-group">
             <label for="">Tag's</label>
-            <textarea type="text" rows="5" name="p_tags" class="form-control">
-                <?php echo $product_tags ?>
-            </textarea>
+            <textarea type="text" rows="5" name="p_tags" class="form-control"><?php echo $product_tags ?></textarea>
         </div>
+
 
         <div class="form-group">
             <button class="btn btn-warning" name="updateProduct" type="submit">Edit</button>

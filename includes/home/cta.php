@@ -4,7 +4,7 @@
         <div class="text-center" data-aos="zoom-in">
             <h3>Smart Watch</h3>
             <p> New generation of smart watches and sport watches</p>
-            <a class="btn cta-btn" href="#">Go to Watches <i class="fa fa-arrow-right"></i></a>
+            <a class="btn cta-btn" href="results.php?cat=watch">Go to Watches <i class="fa fa-arrow-right"></i></a>
         </div>
     </div>
 </section><!-- End Cta Section -->
