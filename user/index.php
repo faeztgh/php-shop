@@ -1,4 +1,5 @@
 <?php
+$page_title = "User Dashboard";
 include('includes/functions.php');
 
 ?>

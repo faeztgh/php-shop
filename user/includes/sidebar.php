@@ -31,7 +31,7 @@ if (isset($_SESSION['CART'])) {
             <span class='badge badge-danger'  id='lblCartCount'> <?php echo $cartCount ?></span>
             <i  class="fa fa-shopping-bag"></i> Cart
         </a>
-        <a href="" class="list-group-item list-group-item-action bg-dark text-light ">
+        <a href="edit_profile.php" class="list-group-item list-group-item-action bg-dark text-light ">
             <i class="fa fa-user"> </i> Edit Profile
         </a>
 

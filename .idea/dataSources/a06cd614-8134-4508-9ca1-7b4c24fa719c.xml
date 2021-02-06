@@ -1349,7 +1349,7 @@
     </column>
     <column id="341" parent="336" name="o_productId">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>

@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710adbe5-c618-48ca-98af-8d79d7f37dc0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/edit_profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a06cd614-8134-4508-9ca1-7b4c24fa719c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a06cd614-8134-4508-9ca1-7b4c24fa719c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/edit_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/home/carousel.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/home/carousel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/home/cta.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/home/cta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results.php" beforeDir="false" afterPath="$PROJECT_DIR$/results.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/single_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/includes/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/includes/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/includes/sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
     </list>
@@ -62,7 +52,7 @@
         <item name="ecommerce@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ecommerce: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="t_product: table" type="dbc44a63:MariaImplModel$Table" />
+        <item name="t_user: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -88,6 +78,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Faez_Taghavi_assignment_3" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -146,6 +137,8 @@
       <workItem from="1611833969004" duration="14447000" />
       <workItem from="1611864300019" duration="87285000" />
       <workItem from="1612365765447" duration="16513000" />
+      <workItem from="1612465766963" duration="5254000" />
+      <workItem from="1612572817246" duration="313000" />
     </task>
     <servers />
   </component>
