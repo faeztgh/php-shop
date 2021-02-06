@@ -44,6 +44,7 @@ include('includes/head.php');
                         $query = "SELECT * FROM t_product WHERE p_category=:category";
                         $stmt = $pdo->prepare($query);
                         $exec = $stmt->execute(['category' => $cat]);
+
                     }
 
                     if (isset($_GET['search'])) {
@@ -58,8 +59,6 @@ include('includes/head.php');
                         ";
                         $stmt = $pdo->prepare($query);
                         $exec = $stmt->execute(['searchInput' => "%" . $searchInput . "%"]);
-                    } else {
-                        return;
                     }
 
 
