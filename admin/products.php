@@ -36,6 +36,9 @@ include('includes/sidebar.php');
                             case "editProduct":
                                 include('edit_product.php');
                                 break;
+                            case "viewOrders":
+                                include('view_all_orders.php');
+                                break;
                             default:
                                 include('view_products.php');
                                 break;

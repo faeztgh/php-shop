@@ -55,25 +55,27 @@ if (isset($_GET)) {
                 <div class="col-md-12 col-lg-4">
                     <h3 class="my-3 text-uppercase text-secondary"><?php echo $name ?></h3>
                     <p><?php echo $desc ?></p>
-                    <h3 class="my-3 text-capitalize text-secondary">Product Details</h3>
-                    <ul>
-                        <li>Brand:
-                            <span class="text-primary"><?php echo $brand ?></span>
-                        </li>
-                        <li>Color:
-                            <span class="text-primary"><?php echo $color ?></span>
-                        </li>
-                        <li>Size:
-                            <span class="text-primary"><?php echo $size ?></span>
-                        </li>
-                        <li>Weight:
-                            <span class="text-primary"><?php echo $weight ?></span>
-                        </li>
-                        <li>Status:
-                            <span class="text-primary"><?php echo $isAvailable ?></span>
-                        </li>
+                    <details>
+                        <summary class="my-3 text-capitalize text-secondary">Product Details</summary>
+                        <ul>
+                            <li>Brand:
+                                <span class="text-primary"><?php echo $brand ?></span>
+                            </li>
+                            <li>Color:
+                                <span class="text-primary"><?php echo $color ?></span>
+                            </li>
+                            <li>Size:
+                                <span class="text-primary"><?php echo $size ?></span>
+                            </li>
+                            <li>Weight:
+                                <span class="text-primary"><?php echo $weight ?></span>
+                            </li>
+                            <li>Status:
+                                <span class="text-primary"><?php echo $isAvailable ?></span>
+                            </li>
 
-                    </ul>
+                        </ul>
+                    </details>
                 </div>
 
             </div>
@@ -98,6 +100,7 @@ if (isset($_GET)) {
 
 
         if ($exec) {
+            $counter = 0;
             while ($productRow = $stmt->fetch()) {
                 $id = $productRow['p_id'];
                 $name = $productRow['p_name'];
@@ -112,6 +115,7 @@ if (isset($_GET)) {
                 $weight = $productRow['p_weight'];
                 $brand = $productRow['p_brand'];
 
+                $counter++;
 
                 ?>
 
@@ -123,6 +127,10 @@ if (isset($_GET)) {
                     <a class="btn btn-link mt-1 " href="single_product.php?id=<?php echo $id ?>"><?php echo $name ?></a>
                 </div>
                 <?php
+
+                if ($counter >= 8) {
+                    break;
+                }
             }
         }
         ?>

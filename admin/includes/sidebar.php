@@ -9,6 +9,7 @@
         <a href="products.php" class="list-group-item list-group-item-action bg-dark text-light ">View Products</a>
         <a href="products.php?chosen=addProduct" class="list-group-item list-group-item-action bg-dark text-light ">Add
             Product</a>
+        <a href="products.php?chosen=viewOrders" class="list-group-item list-group-item-action bg-dark text-light ">View Orders</a>
         <a href="index.php" class="list-group-item list-group-item-action bg-dark text-light ">Dashboard</a>
     </div>
 </div>

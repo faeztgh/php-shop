@@ -2,7 +2,7 @@
 
 require('../config/db.php');
 //Setting up cart
-$productId = $quantity = "";
+$productId = $quantity = $successMsg = $errorMsg = "";
 $productIdsArray = array();
 if (!isset($_SESSION)) {
     session_start();
@@ -11,6 +11,26 @@ if (!isset($_SESSION)) {
 if (!isset($_SESSION['LOGGEDIN']) && $_SESSION['LOGGEDIN'] == false) {
     header("location: ../login.php");
 }
+
+
+// Delete product from cart
+if (isset($_GET, $_GET['remove'])) {
+    $removeId = $_GET['remove'];
+
+    if (($key = array_search($removeId, $productIdsArray)) !== false) {
+        unset($productIdsArray[$key]);
+        session_destroy();
+    }
+    if (isset($_SESSION, $_SESSION['CART'][$removeId])) {
+        if (array_search($removeId, $_SESSION['CART'][$removeId]) !== false) {
+            unset($_SESSION['CART'][$removeId]);
+            header('location: cart.php');
+        }
+    }
+
+
+}
+
 
 if (isset($_POST['addToCartSubmit'], $_POST['product_id'])) {
     $productId = $_POST['product_id'];
@@ -36,7 +56,7 @@ if ($quantity > 0) {
 $productsInCart = isset($_SESSION['CART']) ? $_SESSION['CART'] : array();
 $products = array();
 $totalPrice = 0.0;
-$totalItem = count($_SESSION['CART'])-1 ;
+$totalItem = count($_SESSION['CART']) - 1;
 
 if ($productsInCart) {
     $array_to_question_marks = implode(',', array_fill(0, count($productsInCart), '?'));
@@ -67,6 +87,7 @@ if (isset($_POST['checkout'])) {
     if (isset($_SESSION) && isset($_SESSION['ID'])) {
         $userId = $_SESSION['ID'];
     }
+
     $makeOrderQuery = "INSERT INTO t_order (o_userId, o_productId, o_isPaid, o_paidDate, o_shippingPrice, o_totalPrice, o_count)
                                 VALUES (:userId,:productId,:isPaid,:paidDate,:shippingPrice,:totalPrice,:totalCount)";
 
@@ -74,12 +95,23 @@ if (isset($_POST['checkout'])) {
 
     if (!empty($productIdsArray)) {
         $exec = $stmt->execute(['userId' => $userId, 'productId' => $productIdsArray, 'isPaid' => $isPaid, 'paidDate' => $paidDate,
-            'shippingPrice' => $shippingPrice, 'totalPrice' => $totalPrice, 'totalCount' => $totalItem]);
+            'shippingPrice' => $shippingPrice, 'totalPrice' => $totalPrice, 'totalCount' => $productsInCart[$id]]);
 
         if ($exec) {
-            echo "Shopping Completed";
+            if (isset($_SESSION, $_SESSION['CART'])) {
+
+                foreach ($_SESSION['CART'] as $k => $val) {
+
+                    if ($k !== "USER_ID") {
+                        unset($_SESSION['CART'][$k]);
+                        header('location: cart.php?msg=completeShopping');
+                    }
+                }
+
+
+            }
         } else {
-            echo "Sth went wrong on making order :(";
+            $errorMsg = "Sth went wrong on making order :(";
         }
     } else {
         echo "No product exist";
@@ -87,12 +119,34 @@ if (isset($_POST['checkout'])) {
 
 }
 
+// set complete shopping msg
+if (isset($_GET, $_GET['msg'])) {
+    if ($_GET['msg'] == "completeShopping") {
+        $successMsg = " Shopping Completed!
+                        <br>
+                        <a href='../shop.php' class='text-secondary'>
+                         <i class='fa fa-arrow-left'></i> 
+                         Back To Shop
+                        </a> 
+                         ";
+    }
+}
+
 ?>
 <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/cart.css">
-<div class="card">
+<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+<form class="card" style="padding: 0" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
     <div class="row">
         <div class="col-md-8 cart">
+            <?php
+            if (!empty($successMsg)) {
+                echo "<div class='alert alert-success text-center'> $successMsg</div>";
+            }
+            if (!empty($errorMsg)) {
+                echo "<div class='alert alert-success text-center'>$errorMsg</div>";
+            }
+            ?>
             <div class="title">
                 <div class="row">
                     <div class="col">
@@ -102,52 +156,73 @@ if (isset($_POST['checkout'])) {
                 </div>
             </div>
 
-            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-                <?php
-                if (empty($products)) {
-                    echo "
-                                <div class='alert alert-info'>You have no products added in your Shopping Cart</div>
+            <?php
+            if (empty($products)) {
+
+                echo "
+                                <div class='alert alert-info text-center'>You have no products added in your Shopping Cart</div>
                 ";
-                } else {
 
-                    foreach ($products as $product) {
-                        $img = $product['p_image'];
-                        $name = $product['p_name'];
-                        $category = $product['p_category'];
-                        $price = $product['p_price'];
+            } else {
 
 
-                        ?>
+                foreach ($products as $product) {
+
+                    $img = $product['p_image'];
+                    $name = $product['p_name'];
+                    $category = $product['p_category'];
+                    $price = $product['p_price'];
 
 
-                        <div class="row border-top border-bottom">
-                            <div class="row main align-items-center">
-                                <div class="col-2"><img class="img-fluid"
-                                                        src="../assets/img/products/<?php echo $img ?>">
-                                </div>
-                                <div class="col">
-                                    <div class="row text-muted"><?php echo $name ?></div>
-                                    <div class="row"><?php echo $category ?></div>
-                                </div>
-                                <div class="row ">
-                                    <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                        <input style="width: 65px" type="number" class="form-control-sm"
-                                               name="quantity-<?php $product['p_id'] ?>"
-                                               value="<?php echo $productsInCart[$product['p_id']] ?>" min="1"
-                                               max="<?php echo $product['p_count'] ?>" placeholder="1" required>
-                                    </div>
-                                    <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                        <div class="col">&euro; <?php echo $price ?></div>
-                                    </div>
-                                </div>
-                                <span class="close">&#10005;</span>
+                    ?>
+
+
+                    <div class="row border-top border-bottom">
+                        <div class="row main align-items-center">
+                            <div class="col-2"><img class="img-fluid"
+                                                    src="../assets/img/products/<?php echo $img ?>">
                             </div>
-                        </div>
+                            <div class="col">
+                                <div class="row text-muted"><?php echo $name ?></div>
+                                <div class="row"><?php echo $category ?></div>
+                            </div>
+                            <div class="row col">
+                                <div class="col-md-6 d-flex align-items-center justify-content-center">
 
-                        <?php
-                    }
+                                    <select class='custom-select'
+                                            name='quantity-<?php $product['p_id'] ?>'>
+                                        <option class="text-primary"
+                                                value="<?php echo $productsInCart[$product['p_id']] ?>"><?php echo $productsInCart[$product['p_id']] ?></option>
+                                        <hr>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                    <!--                                    <input style="width: 65px" type="number" class="form-control-sm"-->
+                                    <!--                                           name="quantity--->
+                                    <!--                                    --><?php //$product['p_id'] ?><!--"-->
+                                    <!--                                           value="-->
+                                    <!--                                    -->
+                                    <?php //echo $productsInCart[$product['p_id']] ?><!--" min="1"-->
+                                    <!--                                           max="-->
+                                    <!--                                    -->
+                                    <?php //echo $product['p_count'] ?><!--" placeholder="1">-->
+                                </div>
+                                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                    <div class="col">&euro;<?php echo $price ?></div>
+                                </div>
+                            </div>
+                            <a class="close" href="cart.php?remove=<?php echo $product['p_id'] ?>">&#10005;
+                            </a>
+                        </div>
+                    </div>
+
+                    <?php
                 }
-                ?>
+            }
+            ?>
 
         </div>
         <div class="col-md-4 summary">
@@ -159,13 +234,13 @@ if (isset($_POST['checkout'])) {
                 <div class="col" style="padding-left:0;">Total Items: <?php echo $totalItem ?></div>
                 <div class="col text-right">&euro; <?php echo $totalPrice ?></div>
             </div>
-            <form>
-                <p class="mt-5">SHIPPING</p>
-                <select class="mb-5">
-                    <option class="text-muted">Standard-Delivery- &euro;5.00</option>
-                </select>
-                <p>GIVE CODE</p> <input id="code" placeholder="Enter your code">
-            </form>
+            <!--            <form>-->
+            <p class="mt-5">SHIPPING</p>
+            <select class="mb-5">
+                <option class="text-muted">Standard-Delivery- &euro;5.00</option>
+            </select>
+            <p>GIVE CODE</p> <input id="code" placeholder="Enter your code">
+            <!--            </form>-->
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL PRICE</div>
                 <div class="col text-right">&euro; <?php echo $totalPrice ?></div>
@@ -174,9 +249,7 @@ if (isset($_POST['checkout'])) {
             <button class="btn btn-dark w-100" type="submit" name="checkout">CHECKOUT</button>
             <a class="btn btn-outline-dark w-100 mt-2" href="../shop.php">Continue Shopping</a>
         </div>
-        </form>
-
-
     </div>
-</div>
+
+</form>
 

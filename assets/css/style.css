@@ -34,6 +34,9 @@ input:focus {
     box-shadow: unset !important;
 }
 
+summary:focus{
+    outline: none !important;
+}
 
 /*login form*/
 .max-width-500 {

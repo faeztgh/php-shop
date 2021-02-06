@@ -29,7 +29,7 @@ if (!empty($userId)) {
     $password = $user['u_password'];
     $address = $user['u_address'];
 
-    echo $user['u_name'];
+
 }
 
 // Saving Edited data to DB
@@ -44,13 +44,13 @@ if (isset($_POST, $_POST['editProfile'])) {
     $u_password = trim(htmlspecialchars($_POST['password']));
     $u_address = trim(htmlspecialchars($_POST['address']));
 
-    $u_name = empty($u_name) && $name;
-    $u_lastName = empty($u_lastName) && $lastName;
-    $u_phoneNo = empty($u_phoneNo) && $phoneNo;
-    $u_email = empty($u_email) && $email;
-    $u_password = empty($u_password) && $password;
-    $u_address = empty($u_address) && $address;
+    $u_name = empty($u_name) ? $name : $u_name;
+    $u_lastName = empty($u_lastName) ? $lastName : $u_lastName;
+    $u_phoneNo = empty($u_phoneNo) ? $phoneNo : $u_phoneNo;
+    $u_email = empty($u_email) ? $email : $u_email;
+    $u_address = empty($u_address) ? $address : $u_address;
 
+    // checking password
     if (!empty($u_password)) {
         if (strlen($u_password) < 6) {
             $errorMsg = "Your password must be more than 6 character";
@@ -58,6 +58,8 @@ if (isset($_POST, $_POST['editProfile'])) {
         } else {
             $u_password = password_hash($u_password, PASSWORD_BCRYPT);
         }
+    } else {
+        $u_password = $password;
     }
 
     $updateQuery = "UPDATE t_user SET u_name=:u_name,u_lastName=:u_lastname,u_userName=:u_username,
@@ -65,7 +67,7 @@ if (isset($_POST, $_POST['editProfile'])) {
 
     $updateStmt = $pdo->prepare($updateQuery);
     $execRes = $updateStmt->execute(['u_name' => $u_name, 'u_lastname' => $u_lastName, 'u_username' => $u_username, 'u_email' =>
-        $u_email, 'u_password' => $u_password, 'u_phoneNo' => $u_phoneNo, 'u_address' => $u_address]);
+        $u_email, 'u_password' => $u_password, 'u_phoneNo' => $u_phoneNo, 'u_address' => $u_address, 'u_id' => $id]);
 
     if ($execRes) {
         $successMsg = "Your profile updated successfully";
