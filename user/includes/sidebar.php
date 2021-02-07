@@ -27,12 +27,16 @@ if (isset($_SESSION['CART'])) {
 <div class="bg-dark text-light border-right position-fixed pt-5" id="sidebar-wrapper" style="z-index: 1; top: 0">
     <div class="sidebar-heading">User Dashboard</div>
     <div class="list-group list-group-flush">
+
         <a href="cart.php" class="list-group-item list-group-item-action bg-dark text-light">
-            <span class='badge badge-danger'  id='lblCartCount'> <?php echo $cartCount ?></span>
-            <i  class="fa fa-shopping-bag"></i> Cart
+            <span class='badge badge-danger' id='lblCartCount'> <?php echo $cartCount ?></span>
+            <i class="fa fa-shopping-bag"></i> Cart
         </a>
         <a href="edit_profile.php" class="list-group-item list-group-item-action bg-dark text-light ">
             <i class="fa fa-user"> </i> Edit Profile
+        </a>
+        <a href="index.php?page=orders_list" class="list-group-item list-group-item-action bg-dark text-light ">
+            <i class="fa fa-list"> </i> Orders List
         </a>
 
 

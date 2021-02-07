@@ -84,10 +84,11 @@ if (isset($_SESSION['LOGGEDIN'])) {
                     Products
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="results.php?cat=mobile">Mobile</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="results.php?cat=laptop">Laptop</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="results.php?cat=tablet">Tablet</a>
                 </div>
                 <?php
                 echo $homeLink;

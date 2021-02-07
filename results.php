@@ -38,6 +38,8 @@ include('includes/head.php');
             <div class="row mt-5">
 
                 <?php
+
+
                 if (isset($_GET)) {
                     if (isset($_GET['cat'])) {
                         $cat = trim($_GET['cat']);
@@ -61,26 +63,26 @@ include('includes/head.php');
                         $exec = $stmt->execute(['searchInput' => "%" . $searchInput . "%"]);
                     }
 
+                    if (isset($_GET['cat']) || isset($_GET['search'])) {
+                        if ($exec) {
+                            while ($productRow = $stmt->fetch()) {
+                                $id = $productRow['p_id'];
+                                $name = $productRow['p_name'];
+                                $category = $productRow['p_category'];
+                                $img = $productRow['p_image'];
+                                $price = $productRow['p_price'];
+                                $desc = $productRow['p_description'];
+                                $color = $productRow['p_color'];
+                                $size = $productRow['p_size'];
+                                $isAvailable = $productRow['p_isAvailable'];
+                                $count = $productRow['p_count'];
+                                $weight = $productRow['p_weight'];
+                                $brand = $productRow['p_brand'];
 
-                    if ($exec) {
-                        while ($productRow = $stmt->fetch()) {
-                            $id = $productRow['p_id'];
-                            $name = $productRow['p_name'];
-                            $category = $productRow['p_category'];
-                            $img = $productRow['p_image'];
-                            $price = $productRow['p_price'];
-                            $desc = $productRow['p_description'];
-                            $color = $productRow['p_color'];
-                            $size = $productRow['p_size'];
-                            $isAvailable = $productRow['p_isAvailable'];
-                            $count = $productRow['p_count'];
-                            $weight = $productRow['p_weight'];
-                            $brand = $productRow['p_brand'];
 
+                                $desc = substr($desc, 0, 200);
 
-                            $desc = substr($desc, 0, 200);
-
-                            echo " <div class='col-lg-4 col-md-6 mb-4'>
+                                echo " <div class='col-lg-4 col-md-6 mb-4'>
                                    <div class='card h-100'>
                                     <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name'></a>
                                        <div class='card-body'>
@@ -101,8 +103,10 @@ include('includes/head.php');
                                     </div>
                                 </div>
                             </div>";
+                            }
                         }
-
+                    }else{
+                        echo "<div class='alert alert-danger text-center'>No Result Found!</div>";
                     }
                 }
 
@@ -111,11 +115,13 @@ include('includes/head.php');
         </div>
     </div>
     <?php
-    if ($stmt->rowCount() <= 0) {
-        if (isset($_GET['cat'])) {
-            echo "<div class='alert alert-info text-center'>No Result Found for \" $_GET[cat] \"</div>";
-        } else if (isset($_GET['search'])) {
-            echo "<div class='alert alert-info text-center'>No Result Found for \" $_GET[search] \"</div>";
+    if (isset($_GET['cat']) || isset($_GET['search'])) {
+        if ($stmt->rowCount() <= 0) {
+            if (isset($_GET['cat'])) {
+                echo "<div class='alert alert-info text-center'>No Result Found for \" $_GET[cat] \"</div>";
+            } else if (isset($_GET['search'])) {
+                echo "<div class='alert alert-info text-center'>No Result Found for \" $_GET[search] \"</div>";
+            }
         }
     }
     ?>

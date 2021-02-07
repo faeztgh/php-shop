@@ -133,9 +133,15 @@ if (isset($_GET, $_GET['msg'])) {
 }
 
 ?>
-<link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/cart.css">
-<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+<head>
+
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <title>Cart</title>
+</head>
+<body>
+
 <form class="card" style="padding: 0" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
     <div class="row">
         <div class="col-md-8 cart">
@@ -200,18 +206,11 @@ if (isset($_GET, $_GET['msg'])) {
                                         <option value="4">4</option>
                                         <option value="5">5</option>
                                     </select>
-                                    <!--                                    <input style="width: 65px" type="number" class="form-control-sm"-->
-                                    <!--                                           name="quantity--->
-                                    <!--                                    --><?php //$product['p_id'] ?><!--"-->
-                                    <!--                                           value="-->
-                                    <!--                                    -->
-                                    <?php //echo $productsInCart[$product['p_id']] ?><!--" min="1"-->
-                                    <!--                                           max="-->
-                                    <!--                                    -->
-                                    <?php //echo $product['p_count'] ?><!--" placeholder="1">-->
+
+
                                 </div>
                                 <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                    <div class="col">&euro;<?php echo $price ?></div>
+                                    <div class="col">$<?php echo $price ?></div>
                                 </div>
                             </div>
                             <a class="close" href="cart.php?remove=<?php echo $product['p_id'] ?>">&#10005;
@@ -232,18 +231,17 @@ if (isset($_GET, $_GET['msg'])) {
             <hr>
             <div class="row">
                 <div class="col" style="padding-left:0;">Total Items: <?php echo $totalItem ?></div>
-                <div class="col text-right">&euro; <?php echo $totalPrice ?></div>
+                <div class="col text-right">$ <?php echo $totalPrice ?></div>
             </div>
-            <!--            <form>-->
+
             <p class="mt-5">SHIPPING</p>
             <select class="mb-5">
-                <option class="text-muted">Standard-Delivery- &euro;5.00</option>
+                <option class="text-muted">Standard-Delivery- $5.00</option>
             </select>
-            <p>GIVE CODE</p> <input id="code" placeholder="Enter your code">
-            <!--            </form>-->
+
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL PRICE</div>
-                <div class="col text-right">&euro; <?php echo $totalPrice ?></div>
+                <div class="col text-right">$ <?php echo $totalPrice ?></div>
             </div>
 
             <button class="btn btn-dark w-100" type="submit" name="checkout">CHECKOUT</button>
@@ -252,4 +250,4 @@ if (isset($_GET, $_GET['msg'])) {
     </div>
 
 </form>
-
+</body>

@@ -19,15 +19,14 @@ include('includes/navigation.php');
 
         <div class="row">
             <div class="col-lg-3">
-                <?php
-                include('includes/neon_shop_name.php');
-                ?>
-                <div class="list-group">
-                    <a href="results.php?cat=laptop" class="list-group-item">Laptop</a>
-                    <a href="results.php?cat=mobile" class="list-group-item">Phone</a>
-                    <a href="results.php?cat=tablet" class="list-group-item">Tablet</a>
-                </div>
-
+                    <?php
+                    include('includes/neon_shop_name.php');
+                    ?>
+                    <div class="list-group ">
+                        <a href="results.php?cat=laptop" class="list-group-item">Laptop</a>
+                        <a href="results.php?cat=mobile" class="list-group-item">Phone</a>
+                        <a href="results.php?cat=tablet" class="list-group-item">Tablet</a>
+                    </div>
             </div>
             <!-- /.col-lg-3 -->
 
@@ -105,7 +104,7 @@ include('includes/navigation.php');
                         $desc = substr($desc, 0, 200);
 
                         echo " <div class='col-lg-4 col-md-6 mb-4'>
-                                   <div class='card h-100'>
+                                   <div class='card w-100 '>
                                     <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name'></a>
                                        <div class='card-body'>
                                        <h4 class='card-title'>
@@ -116,13 +115,14 @@ include('includes/navigation.php');
                                             <a href='single_product.php?id={$id}' class='btn btn-link'>Read more</a>
                                         </p>
                                         </div>
-                                    <div class='card-footer d-flex justify-content-between'>
-                                        <small class='text-muted align-self-end'>&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                 <form action='user/cart.php' method='post'>
-                                 <input type='hidden' name='product_id' value='{$id}'>
-                                       <button class='btn btn-outline-primary' type='submit' name='addToCartSubmit'>Add to Cart <i class='fa fa-shopping-cart'></i></button>
-                                 </form>
-                                    </div>
+                                        <div class='card-footer d-flex justify-content-between'>
+                                                <small class='text-muted align-self-end'>&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                        
+                                             <form action='user/cart.php' method='post' class='align-self-end mb-0'>
+                                                   <input type='hidden' name='product_id' value='{$id}'>
+                                                   <button class='btn btn-outline-primary ' type='submit' name='addToCartSubmit'>Add to Cart <i class='fa fa-shopping-cart'></i></button>
+                                             </form>
+                                      </div>
                                 </div>
                             </div>";
                     }

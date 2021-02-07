@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710adbe5-c618-48ca-98af-8d79d7f37dc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/view_all_orders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/single_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view_all_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view_all_orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.php" beforeDir="false" afterPath="$PROJECT_DIR$/results.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/edit_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/edit_profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/includes/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/view_all_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/view_all_orders.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,25 +82,25 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Faez_Taghavi_assignment_3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\user" />
+      <recent name="C:\xampp\htdocs\ecommerce\assets\css" />
+      <recent name="C:\xampp\htdocs\ecommerce\assets" />
+      <recent name="C:\xampp\htdocs\ecommerce\assets\img" />
+      <recent name="C:\xampp\htdocs\ecommerce\assets\img\features" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ecommerce\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\assets\css" />
       <recent name="C:\xampp\htdocs\ecommerce\includes\home" />
       <recent name="C:\xampp\htdocs\ecommerce\assets\img" />
       <recent name="C:\xampp\htdocs\ecommerce\admin\assets" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ecommerce\assets\css" />
-      <recent name="C:\xampp\htdocs\ecommerce\assets" />
-      <recent name="C:\xampp\htdocs\ecommerce\assets\img" />
-      <recent name="C:\xampp\htdocs\ecommerce\assets\img\features" />
-      <recent name="C:\xampp\htdocs\ecommerce\assets\img\slides" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -141,6 +145,7 @@
       <workItem from="1612365765447" duration="16513000" />
       <workItem from="1612465766963" duration="5254000" />
       <workItem from="1612572817246" duration="10921000" />
+      <workItem from="1612652476601" duration="3886000" />
     </task>
     <servers />
   </component>

@@ -62,7 +62,7 @@ include('../config/db.php');
 
                 <?php
                 echo "<td>{$order_id}</td>";
-                echo "<td>{$userFullname}</td>";
+                echo "<td class='text-capitalize'>{$userFullname}</td>";
                 echo "<td>{$product_name}</td>";
                 echo "<td>{$order_count}</td>";
                 echo "<td>{$order_orderDate}</td>";

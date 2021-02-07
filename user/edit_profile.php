@@ -82,12 +82,9 @@ if (isset($_POST, $_POST['editProfile'])) {
 
 <?php
 $page_title = "Edit Profile";
-include('includes/head.php');
+//include('includes/head.php');
 ?>
 
-<div class="container">
-    <div class="row  m-auto col-sm-12 max-width-600">
-        <div class="col-sm-12 col-md">
             <div class="card mt-5">
                 <div class="card-header text-center">
                     <h1><i class="fa fa-edit font-icon"></i>
@@ -223,9 +220,6 @@ include('includes/head.php');
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
 
 <?php

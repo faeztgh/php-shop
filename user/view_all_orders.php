@@ -7,7 +7,7 @@ include('../config/db.php');
 
         <thead>
         <tr>
-            <th class="text-danger">ID</th>
+
             <th class="text-danger">User</th>
             <th class="text-danger">Product</th>
             <th class="text-danger">Count</th>
@@ -21,9 +21,14 @@ include('../config/db.php');
         </thead>
         <tbody>
         <?php
-        $select_all_orders_quer = "SELECT * FROM t_order ORDER BY o_id DESC";
-        $stmt = $pdo->prepare($select_all_orders_quer);
-        $stmt->execute();
+
+        if (isset($_SESSION, $_SESSION['ID'])) {
+            $currUserId = $_SESSION['ID'];
+        }
+
+        $select_all_orders_query = "SELECT * FROM t_order WHERE o_userId=:u_id";
+        $stmt = $pdo->prepare($select_all_orders_query);
+        $stmt->execute(['u_id' => $currUserId]);
         while ($row = $stmt->fetch()) {
             $order_id = $row['o_id'];
             $order_userId = $row['o_userId'];
@@ -48,6 +53,7 @@ include('../config/db.php');
             }
 
             // Retrieve products in DB
+            print_r(json_decode($order_productId));
             $order_productId = json_decode($order_productId)[0];
             $select_all_products_query = "SELECT * FROM t_product WHERE p_id=:p_id";
             $p_stmt = $pdo->prepare($select_all_products_query);
@@ -61,8 +67,8 @@ include('../config/db.php');
 
 
                 <?php
-                echo "<td>{$order_id}</td>";
-                echo "<td>{$userFullname}</td>";
+
+                echo "<td class='text-capitalize'>{$userFullname}</td>";
                 echo "<td>{$product_name}</td>";
                 echo "<td>{$order_count}</td>";
                 echo "<td>{$order_orderDate}</td>";
@@ -70,7 +76,6 @@ include('../config/db.php');
                 echo "<td> {$order_paidDate}</td>";
                 echo "<td> {$order_shippingPrice}</td>";
                 echo "<td> {$order_totalPrice}</td>";
-
 
             }
         }
