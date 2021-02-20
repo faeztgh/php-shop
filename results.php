@@ -20,7 +20,7 @@ include('includes/head.php');
 ?>
 
 <!-- Page Content -->
-<div class="container" style="text-align: left;  ">
+<div class="container" style="text-align: left; max-width: 1500px">
     <div class="row">
         <div class="col-lg-3">
             <?php
@@ -30,6 +30,9 @@ include('includes/head.php');
                 <a href="results.php?cat=laptop" class="list-group-item">Laptop</a>
                 <a href="results.php?cat=mobile" class="list-group-item">Phone</a>
                 <a href="results.php?cat=tablet" class="list-group-item">Tablet</a>
+                <a href="results.php?cat=smartWatch" class="list-group-item">Smart Watch</a>
+
+
             </div>
 
         </div>
@@ -84,7 +87,7 @@ include('includes/head.php');
 
                                 echo " <div class='col-lg-4 col-md-6 mb-4'>
                                    <div class='card h-100'>
-                                    <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name'></a>
+                                    <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name' style='max-height:400px'></a>
                                        <div class='card-body'>
                                        <h4 class='card-title'>
                                            <a href='single_product.php?id={$id}'>$name</a>
@@ -105,7 +108,7 @@ include('includes/head.php');
                             </div>";
                             }
                         }
-                    }else{
+                    } else {
                         echo "<div class='alert alert-danger text-center'>No Result Found!</div>";
                     }
                 }

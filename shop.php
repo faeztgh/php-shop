@@ -15,18 +15,19 @@ include('includes/navigation.php');
 
 
     <!-- Page Content -->
-    <div class="container" style="text-align: left;  ">
+    <div class="container" style="text-align: left; max-width: 1500px">
 
         <div class="row">
             <div class="col-lg-3">
-                    <?php
-                    include('includes/neon_shop_name.php');
-                    ?>
-                    <div class="list-group ">
-                        <a href="results.php?cat=laptop" class="list-group-item">Laptop</a>
-                        <a href="results.php?cat=mobile" class="list-group-item">Phone</a>
-                        <a href="results.php?cat=tablet" class="list-group-item">Tablet</a>
-                    </div>
+                <?php
+                include('includes/neon_shop_name.php');
+                ?>
+                <div class="list-group ">
+                    <a href="results.php?cat=laptop" class="list-group-item">Laptop</a>
+                    <a href="results.php?cat=mobile" class="list-group-item">Phone</a>
+                    <a href="results.php?cat=tablet" class="list-group-item">Tablet</a>
+                    <a href="results.php?cat=smartWatch" class="list-group-item">Smart Watch</a>
+                </div>
             </div>
             <!-- /.col-lg-3 -->
 
@@ -100,18 +101,23 @@ include('includes/navigation.php');
                         $weight = $productRow['p_weight'];
                         $brand = $productRow['p_brand'];
 
+                        if (strlen($name) > 12) {
+                            $name = substr($name, 0, 12) . " ...";
+                        } else {
+                            $name = substr($name, 0, 12);
+                        }
 
-                        $desc = substr($desc, 0, 200);
+                        $desc = substr($desc, 0, 150);
 
                         echo " <div class='col-lg-4 col-md-6 mb-4'>
-                                   <div class='card w-100 '>
-                                    <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name'></a>
+                                   <div class='card w-100' style='max-height: 523px'>
+                                    <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name' style='max-height: 400px'></a>
                                        <div class='card-body'>
-                                       <h4 class='card-title'>
+                                       <h4 class='card-title text-nowrap'>
                                            <a href='single_product.php?id={$id}'>$name</a>
                                        </h4>
                                        <h5>$$price</h5>
-                                        <p class='card-text'>$desc ... 
+                                        <p class='card-text font-weight-lighter'>$desc ... 
                                             <a href='single_product.php?id={$id}' class='btn btn-link'>Read more</a>
                                         </p>
                                         </div>

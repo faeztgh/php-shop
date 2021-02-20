@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710adbe5-c618-48ca-98af-8d79d7f37dc0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/error.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view_all_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view_all_orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/home/cta.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/home/cta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results.php" beforeDir="false" afterPath="$PROJECT_DIR$/results.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/edit_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/edit_profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/includes/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/view_all_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/view_all_orders.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,7 +60,7 @@
         <item name="ecommerce@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ecommerce: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="t_user: table" type="dbc44a63:MariaImplModel$Table" />
+        <item name="t_product: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -146,6 +148,8 @@
       <workItem from="1612465766963" duration="5254000" />
       <workItem from="1612572817246" duration="10921000" />
       <workItem from="1612652476601" duration="3886000" />
+      <workItem from="1612753388600" duration="2399000" />
+      <workItem from="1613770177841" duration="9727000" />
     </task>
     <servers />
   </component>

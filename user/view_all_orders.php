@@ -53,11 +53,13 @@ include('../config/db.php');
             }
 
             // Retrieve products in DB
-            print_r(json_decode($order_productId));
+
+
             $order_productId = json_decode($order_productId)[0];
             $select_all_products_query = "SELECT * FROM t_product WHERE p_id=:p_id";
             $p_stmt = $pdo->prepare($select_all_products_query);
             $p_stmt->execute(['p_id' => $order_productId]);
+
 
             while ($p_row = $p_stmt->fetch()) {
                 $product_name = $p_row['p_name'];
@@ -84,8 +86,3 @@ include('../config/db.php');
         ?>
         </tbody>
     </table>
-
-
-<?php
-include('includes/tail.php');
-?>

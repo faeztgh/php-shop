@@ -82,146 +82,160 @@ if (isset($_POST, $_POST['editProfile'])) {
 
 <?php
 $page_title = "Edit Profile";
-//include('includes/head.php');
+include('includes/head.php');
+include('includes/sidebar.php');
 ?>
+<div class="d-flex mb-5 mt-5" id="wrapper" style="overflow: unset">
+    <div class="container-fluid">
+        <div class="animated fadeIn">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-5 col-md-5 col-xs-10">
 
-            <div class="card mt-5">
-                <div class="card-header text-center">
-                    <h1><i class="fa fa-edit font-icon"></i>
-                        Edit Profile
-                    </h1>
+                    <div class="card mt-5">
+                        <div class="card-header text-center">
+                            <h1><i class="fa fa-edit font-icon"></i>
+                                Edit Profile
+                            </h1>
 
 
-                </div>
-                <div class="card-body">
-                    <form id="editProfileForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
-                          onsubmit="return(registerFormValidation());">
-                        <?php
-                        if (!empty($errorMsg)) {
-                            echo " <div class='alert alert-danger text-center'>$errorMsg</div>";
-                        }
+                        </div>
+                        <div class="card-body">
+                            <form id="editProfileForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
+                                  onsubmit="return(registerFormValidation());">
+                                <?php
+                                if (!empty($errorMsg)) {
+                                    echo " <div class='alert alert-danger text-center'>$errorMsg</div>";
+                                }
 
-                        if (!empty($successMsg)) {
-                            echo " <div class='alert alert-success text-center'>$successMsg</div>";
-                        }
-                        ?>
+                                if (!empty($successMsg)) {
+                                    echo " <div class='alert alert-success text-center'>$successMsg</div>";
+                                }
+                                ?>
 
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
                                     <span class="input-group-text">
                                     <i class="fa fa-edit font-icon"></i>
                                     </span>
+                                        </div>
+                                        <input class="form-control" type="text" id="name" name="name"
+                                               value="<?php echo $name ?>"
+                                               placeholder="Name">
+                                    </div>
+                                    <span id="nameAlert" class="alert-span"></span>
                                 </div>
-                                <input class="form-control" type="text" id="name" name="name"
-                                       value="<?php echo $name ?>"
-                                       placeholder="Name">
-                            </div>
-                            <span id="nameAlert" class="alert-span"></span>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="lastName">Last name</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="form-group">
+                                    <label for="lastName">Last name</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
                                     <span class="input-group-text">
                                     <i class="fa fa-edit font-icon"></i>
                                     </span>
+                                        </div>
+                                        <input class="form-control" type="text" id="lastName" name="lastName"
+                                               value="<?php echo $lastName ?>"
+                                               placeholder="Lastname">
+                                    </div>
+                                    <span id="nameAlert" class="alert-span"></span>
                                 </div>
-                                <input class="form-control" type="text" id="lastName" name="lastName"
-                                       value="<?php echo $lastName ?>"
-                                       placeholder="Lastname">
-                            </div>
-                            <span id="nameAlert" class="alert-span"></span>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="phoneNo">Phone Number</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="form-group">
+                                    <label for="phoneNo">Phone Number</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
                                     <span class="input-group-text">
                                     <i class="fa fa-phone font-icon"></i>
                                     </span>
+                                        </div>
+                                        <input class="form-control" type="text" id="phoneNo" name="phoneNo"
+                                               maxlength="11"
+                                               value="<?php echo $phoneNo ?>"
+                                               minlength="10"
+                                               placeholder="Phone">
+                                    </div>
+                                    <span id="nameAlert" class="alert-span"></span>
                                 </div>
-                                <input class="form-control" type="text" id="phoneNo" name="phoneNo" maxlength="11"
-                                       value="<?php echo $phoneNo ?>"
-                                       minlength="10"
-                                       placeholder="Phone">
-                            </div>
-                            <span id="nameAlert" class="alert-span"></span>
-                        </div>
 
 
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
                                     <span class="input-group-text">
                                     <i class="fa fa-user font-icon"></i>
                                     </span>
+                                        </div>
+                                        <input class="form-control" type="text" id="username" name="userName"
+                                               value="<?php echo $userName ?>"
+                                               placeholder="Username"
+
+                                        >
+                                    </div>
+                                    <span id="usernameAlert" class="alert-span"></span>
                                 </div>
-                                <input class="form-control" type="text" id="username" name="userName"
-                                       value="<?php echo $userName ?>"
-                                       placeholder="Username"
 
-                                >
-                            </div>
-                            <span id="usernameAlert" class="alert-span"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
                                     <span class="input-group-text">
                                     <i class="fa fa-envelope font-icon"></i>
                                     </span>
+                                        </div>
+                                        <input class="form-control" type="email" id="email" name="email"
+                                               placeholder="Email"
+                                               value="<?php echo $email ?>">
+                                    </div>
+                                    <span id="emailAlert" class="alert-span"></span>
                                 </div>
-                                <input class="form-control" type="email" id="email" name="email" placeholder="Email"
-                                       value="<?php echo $email ?>">
-                            </div>
-                            <span id="emailAlert" class="alert-span"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
                                     <span class="input-group-text">
                                     <i class="fa fa-asterisk font-icon"></i>
                                     </span>
+                                        </div>
+                                        <input class="form-control" type="password" id="password" name="password"
+                                               minlength="6"
+                                               placeholder="Password">
+                                    </div>
+                                    <span id="passwordAlert" class="alert-span"></span>
+
                                 </div>
-                                <input class="form-control" type="password" id="password" name="password" minlength="6"
-                                       placeholder="Password">
-                            </div>
-                            <span id="passwordAlert" class="alert-span"></span>
 
-                        </div>
-
-                        <div class="form-group">
-                            <label for="address">Address</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
                                     <span class="input-group-text">
                                     <i class="fa fa-location-arrow font-icon"></i>
                                     </span>
+                                        </div>
+                                        <textarea class="form-control" type="text" id="address" name="address" rows="5"
+                                                  placeholder="Address"><?php echo $address ?></textarea>
+                                    </div>
+                                    <span id="nameAlert" class="alert-span"></span>
                                 </div>
-                                <textarea class="form-control" type="text" id="address" name="address" rows="5"
-                                          placeholder="Address"><?php echo $address ?></textarea>
-                            </div>
-                            <span id="nameAlert" class="alert-span"></span>
+
+                                <button class="btn btn-dark btn-block font-weight-bold font-md mt-5" type="submit"
+                                        name="editProfile"
+                                        id="registerBtn">Save Changes
+                                </button>
+
+                            </form>
                         </div>
+                    </div>
 
-                        <button class="btn btn-dark btn-block font-weight-bold font-md mt-5" type="submit"
-                                name="editProfile"
-                                id="registerBtn">Save Changes
-                        </button>
-
-                    </form>
                 </div>
             </div>
-
+        </div>
+    </div>
+</div>
 
 <?php
-include('../includes/tail.php');
+include('includes/tail.php');
 ?>

@@ -45,7 +45,6 @@ if (isset($_POST['addProduct'])) {
             if ($execRes) {
                 // if was successfull redirect to the admin page
                 $successMsg = "Product added successfully !";
-                header("location: products.php");
             } else {
                 $error = "Something went Wrong!";
             }
@@ -84,6 +83,7 @@ unset($pdo);
                     <option value="mobile">Mobile</option>
                     <option value="laptop">Laptop</option>
                     <option value="tablet">Tablet</option>
+                    <option value="smartWatch">Smart Watch</option>
                 </select>
             </div>
         </div>

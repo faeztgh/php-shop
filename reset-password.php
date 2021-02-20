@@ -5,7 +5,7 @@ session_start();
 
 ?>
 <?php
-$page_title = "بازیابی رمز عبور";
+$page_title = "Reset Password";
 include('includes/head.php');
 ?>
     <div class="container">
@@ -13,7 +13,7 @@ include('includes/head.php');
             <div class="col-sm-12 col-md">
                 <div class="card mt-5">
                     <div class="card-header text-center">
-                        <h1>بازیابی رمز عبور</h1>
+                        <h1>Reset Password</h1>
                     </div>
                     <div class="card-body">
                         <form id="registerForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
@@ -23,10 +23,10 @@ include('includes/head.php');
                             }
                             ?>
                             <div class="form-group">
-                                <label for="email">ایمیل</label>
+                                <label for="email">Email</label>
                                 <div class="input-group">
                                     <input class="form-control" type="email" id="email" name="email"
-                                           placeholder="ایمیل">
+                                           placeholder="Email">
                                     <div class="input-group-prepend">
                                     <span class="input-group-text">
                                     <i class="fa fa-envelope font-icon"></i>
@@ -38,7 +38,7 @@ include('includes/head.php');
 
                             <button class="btn btn-dark btn-block font-weight-bold font-md mt-5" type="submit"
                                     name="updatePass"
-                                    id="registerBtn">تغییر رمز عبور
+                                    id="registerBtn">Reset Password
                             </button>
                         </form>
                     </div>

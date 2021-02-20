@@ -1,6 +1,21 @@
 <?php
 include('../config/db.php');
+?>
 
+<?php
+if (isset($_GET['delete'])) {
+    $delete_id = $_GET['delete'];
+
+    $delete_selected_pid_query = "DELETE FROM t_product WHERE p_id = {$delete_id}";
+    $dl_stmt = $pdo->prepare($delete_selected_pid_query);
+
+    if ($dl_stmt->execute()) {
+        echo "<h1 class='alert alert-success'>Product deleted successfully</h1>";
+        header("location: products.php?chosen=viewProducts");
+    } else {
+        echo "<h1 class='alert alert-danger'>Something went wrong!</h1>";
+    }
+}
 ?>
 
 
@@ -9,7 +24,6 @@ include('../config/db.php');
 
             <thead>
             <tr>
-                <!--                <th><input id="selectAllBox" type="checkbox"></th>-->
                 <th>ID</th>
                 <th>Name</th>
                 <th>Category</th>
@@ -67,27 +81,11 @@ include('../config/db.php');
                 echo "<td>{$product_brand}</td>";
                 echo "<td>{$product_tags}</td>";
                 echo "<td>
-                                          <a class='btn btn-sm btn-danger ' href='products.php?delete={$product_id}'>Delete</a>
-                                          <a class='btn btn-sm btn-warning' href='products.php?chosen=editProduct&p_id={$product_id}'>Edit</a>
-                                      </td>";
+                          <a class='btn btn-sm btn-danger ' href='view_products.php?delete={$product_id}'>Delete</a>
+                          <a class='btn btn-sm btn-warning' href='products.php?chosen=editProduct&p_id={$product_id}'>Edit</a>
+                      </td>";
                 echo "<tr>";
 
-            }
-
-
-            if (isset($_GET['delete'])) {
-                $delete_id = $_GET['delete'];
-
-                $delete_selected_pid_query = "DELETE FROM t_product WHERE p_id = {$delete_id}";
-                $dl_stmt = $pdo->prepare($delete_selected_pid_query);
-
-                if ($dl_stmt->execute()) {
-                    echo "<h1 class='alert alert-success'>Product deleted successfully</h1>";
-                    header("location: products.php");
-                } else {
-                    echo "<h1 class='alert alert-danger'>Something went wrong!</h1>";
-
-                }
             }
             ?>
             </tbody>

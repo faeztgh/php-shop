@@ -1,8 +1,7 @@
-<script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
 <?php
-
 include('../config/db.php');
 $successMsg = $error = "";
+
 if (isset($_GET['p_id'])) {
     $productId = $_GET['p_id'];
 }
@@ -40,6 +39,7 @@ while ($row = $stmt->fetch()) {
         $p_count = trim(htmlspecialchars($_POST['p_count']));
         $p_weight = trim(htmlspecialchars($_POST['p_weight']));
         $p_brand = trim(htmlspecialchars($_POST['p_brand']));
+        $p_size = trim(htmlspecialchars($_POST['p_size']));
         $p_desc = trim($_POST['p_desc']);
         $p_tags = trim(htmlspecialchars($_POST['p_tags']));
         $image = $_FILES['p_img']['name'];
@@ -50,24 +50,24 @@ while ($row = $stmt->fetch()) {
 
 
         if (empty($p_name) || empty($p_category) || empty($p_price) || empty($p_color) || empty($p_isAvailable)
-            || empty($p_count) || empty($p_weight) || empty($p_brand) || empty($p_desc) || empty($p_tags)) {
+            || empty($p_count) || empty($p_weight) || empty($p_brand) || empty($p_desc) || empty($p_tags) || empty($p_size)) {
             $error = "Please fill all the fields";
 
         } else {
             if ($image == '' || empty($image)) {
                 $query = "UPDATE t_product SET p_name=:p_name, p_category= :p_category, p_price=:p_price, p_color= :p_color, 
                 p_isAvailable=:p_isAvailable, p_count=:p_count, p_weight=:p_weight, p_brand=:p_brand, p_description=:p_desc,
-                p_tags=:p_tags WHERE p_id=:deleteId";
+                p_tags=:p_tags, p_size=:p_size WHERE p_id=:deleteId";
 
-                $exec = ['p_name' => $p_name, 'p_category' => $p_category, 'p_price' => $p_price,
+                $exec = ['p_name' => $p_name, 'p_category' => $p_category, 'p_price' => $p_price,'p_size'=>$p_size,
                     'p_color' => $p_color, 'p_isAvailable' => $p_isAvailable, 'p_count' => $p_count, 'p_weight' => $p_weight,
                     'p_brand' => $p_brand, 'p_desc' => $p_desc, 'p_tags' => $p_tags, "deleteId" => $productId];
             } else {
                 $query = "UPDATE t_product SET p_name=:p_name, p_category= :p_category, p_price=:p_price, p_color= :p_color, 
                 p_isAvailable=:p_isAvailable, p_count=:p_count, p_weight=:p_weight, p_brand=:p_brand, p_description=:p_desc,
-                p_tags=:p_tags,p_image=:image WHERE p_id=:deleteId";
+                p_tags=:p_tags,p_image=:image, p_size=:p_size WHERE p_id=:deleteId";
 
-                $exec = ['p_name' => $p_name, 'p_category' => $p_category, 'p_price' => $p_price,
+                $exec = ['p_name' => $p_name, 'p_category' => $p_category, 'p_price' => $p_price,'p_size'=>$p_size,
                     'p_color' => $p_color, 'p_isAvailable' => $p_isAvailable, 'p_count' => $p_count, 'p_weight' => $p_weight,
                     'p_brand' => $p_brand, 'p_desc' => $p_desc, 'p_tags' => $p_tags, 'image' => $image, "deleteId" => $productId];
             }
@@ -79,19 +79,19 @@ while ($row = $stmt->fetch()) {
                 if ($execRes) {
                     $successMsg = "Product update successfully !";
                     // if was successfull redirect to the admin page
-//                    header("location: products.php");
+//                    header("location: products.php?chosen=viewProducts");
+                    echo "<script> location.replace('http://localhost/ecommerce/admin/products.php?chosen=viewProducts'); </script>";
                 } else {
                     $error = "Something went Wrong!";
                     unset($stmt);
                 }
             }
         }
-
     }
-// close connection
+    // close connection
     unset($pdo);
     ?>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
 
     <form class="mt-5 pt-5mb-5 pb-5 " action="" method="post"
           enctype="multipart/form-data">
@@ -120,6 +120,7 @@ while ($row = $stmt->fetch()) {
                         <option value="mobile">Mobile</option>
                         <option value="laptop">Laptop</option>
                         <option value="tablet">Tablet</option>
+                        <option value="smartWatch">Smart Watch</option>
                     </select>
                 </div>
             </div>
@@ -198,11 +199,8 @@ while ($row = $stmt->fetch()) {
         <div class="form-group">
             <button class="btn btn-warning" name="updateProduct" type="submit">Edit</button>
         </div>
-
     </form>
-
     <?php
-
 }// end of while
 ?>
 
