@@ -2,88 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710adbe5-c618-48ca-98af-8d79d7f37dc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/includes/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/autoload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/autoload_namespaces.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/autoload_real.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/autoload_static.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/installed.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/installed.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/composer/platform_check.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/COMMITMENT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/SECURITY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/VERSION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/get_oauth_token.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-af.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-ar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-az.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-ba.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-be.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-bg.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-ca.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-ch.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-cs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-da.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-de.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-el.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-eo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-es.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-et.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-fa.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-fi.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-fo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-fr.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-gl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-he.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-hi.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-hr.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-hu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-hy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-id.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-it.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-ja.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-ka.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-ko.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-lt.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-lv.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-mg.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-ms.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-nb.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-nl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-pl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt_br.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-ro.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-ru.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-sk.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-sl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-sv.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-tl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-tr.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-uk.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-vi.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh_cn.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/phpunit.xml.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/src/Exception.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/src/OAuth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/src/PHPMailer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/src/POP3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer/src/SMTP.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reset-password2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reset-password3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reset-password3.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password3.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -220,7 +142,7 @@
       <workItem from="1612572817246" duration="10921000" />
       <workItem from="1612652476601" duration="3886000" />
       <workItem from="1612753388600" duration="2399000" />
-      <workItem from="1613770177841" duration="16551000" />
+      <workItem from="1613770177841" duration="18458000" />
     </task>
     <servers />
   </component>

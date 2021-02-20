@@ -27,14 +27,14 @@ if (isset($_POST, $_POST['resetPass'])) {
 
         try {
             //Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-            $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
-            $mail->SMTPAuth = true;                                   //Enable SMTP authentication
-            $mail->Username = 'supp.shop2021@gmail.com';                     //SMTP username
-            $mail->Password = 'S12345678P';                               //SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'supp.shop2021@gmail.com';
+            $mail->Password = 'S12345678P';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
 
             //Recipients
             $mail->setFrom('supp.shop2021@gmail.com', 'F&Co. Shop');

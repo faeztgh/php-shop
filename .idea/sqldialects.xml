@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/admin/edit_product.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/admin/view_products.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/login.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/reset-password3.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/results.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/signup.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/user/cart.php" dialect="GenericSQL" />
