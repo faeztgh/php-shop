@@ -2,25 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710adbe5-c618-48ca-98af-8d79d7f37dc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/404.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reset-password2.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reset-password3.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results.php" beforeDir="false" afterPath="$PROJECT_DIR$/results.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/single_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/edit_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/edit_profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/Readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/about.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/cta-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/features-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/features-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/features-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/hero-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio-details-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio-details-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio-details-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/team/team-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/team/team-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/team/team-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/team/team-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials/testimonials-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials/testimonials-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials/testimonials-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials/testimonials-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials/testimonials-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/changelog.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/inner-page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/portfolio-details.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +188,7 @@
       <workItem from="1612652476601" duration="3886000" />
       <workItem from="1612753388600" duration="2399000" />
       <workItem from="1613770177841" duration="18458000" />
-      <workItem from="1613880157731" duration="9985000" />
+      <workItem from="1613880157731" duration="10649000" />
     </task>
     <servers />
   </component>

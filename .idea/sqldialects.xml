@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/admin/add_product.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/admin/edit_product.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/admin/view_all_orders.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/admin/view_products.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/login.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/reset-password3.php" dialect="GenericSQL" />
