@@ -17,44 +17,34 @@ if (isset($_POST, $_POST['resetPassword'])) {
             if (empty($password) || empty($repeatPassword) || empty($email)) {
                 $msg = "<div class='alert alert-danger'>Please fill all the fields!</div>";
             } else {
-                $email = trim(htmlspecialchars($email));
+
                 $password = trim(htmlspecialchars($password));
                 $repeatPassword = trim(htmlspecialchars($repeatPassword));
 
-                // Check for existence query
-                $query = "SELECT u_id FROM t_user WHERE u_email= :email";
+                // validate password
+                if ($password != $repeatPassword) {
+                    $msg = "<div class='alert alert-danger'>Passwords not match!</div>";
+                } elseif (strlen($password) < 6) {
+                    $msg = "<div class='alert alert-danger'>Your password must be more than 6 character!</div>";
+                } else {
+                    // insert into db
+                    $updateQuery = "UPDATE t_user SET u_password=:password WHERE u_email=:email";
 
-                if ($stmt = $pdo->prepare($query)) {
-                    $stmt->execute(['email' => $email]);
-                    if ($stmt->rowCount() == 0) {
-                        $msg = "<div class='alert alert-danger'>User Not Exist!</div>";
-                    } else {
+                    if ($stmtUpdate = $pdo->prepare($updateQuery)) {
+                        $password = password_hash($password, PASSWORD_BCRYPT);
+                        $execRes = $stmtUpdate->execute(['password' => $password, 'email' => $email]);
 
-                        // validate password
-                        if ($password != $repeatPassword) {
-                            $msg = "<div class='alert alert-danger'>Passwords not match!</div>";
-                        } elseif (strlen($password) < 6) {
-                            $msg = "<div class='alert alert-danger'>Your password must be more than 6 character!</div>";
+                        if ($execRes) {
+                            $msg = "<div class='alert alert-danger'>Password Changed!</div>";
+                            // Redirect to login page
+                            header("location: login.php");
                         } else {
-                            // insert into db
-                            $updateQuery = "UPDATE t_user SET (u_password) VALUES (:password)";
-
-                            if ($stmtUpdate = $pdo->prepare($updateQuery)) {
-                                $password = password_hash($password, PASSWORD_BCRYPT);
-                                $execRes = $stmtUpdate->execute(['password' => $password]);
-
-                                if ($execRes) {
-                                    $msg = "<div class='alert alert-danger'>Password Changed!</div>";
-                                    // Redirect to login page
-                                    header("location: login.php");
-                                } else {
-                                    $msg = "<div class='alert alert-danger'>Something went wrong. Please try again!</div>";
-                                }
-                                unset($stmtUpdate);
-                            }
+                            $msg = "<div class='alert alert-danger'>Something went wrong. Please try again!</div>";
                         }
+                        unset($stmtUpdate);
                     }
                 }
+
                 // close the statement
                 unset($stmt);
             }
@@ -79,8 +69,8 @@ include('includes/head.php');
                     <div class="card-body">
 
                         <?php
-                        if (!empty($email)) {
-                            echo "<div class='alert alert-info'>$email</div>";
+                        if (!empty($_SESSION['RESET_EMAIL'])) {
+                            echo "<div class='alert alert-info'>$_SESSION[RESET_EMAIL]</div>";
                         }
                         if (!empty($msg)) {
                             echo $msg;

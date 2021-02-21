@@ -17,18 +17,17 @@ include('includes/sidebar.php');
 
 
                             <?php
-                            $page="";
-                            if (isset($_GET,$_GET['page'])){
-                                $page=$_GET['page'];
+                            if (isset($_GET, $_GET['page'])) {
+                                $page = $_GET['page'];
+                            } else {
+                                $page = "";
+
                             }
 
-                            switch ($page){
-                                case "orders_list":
-                                    include ('view_all_orders.php');
-                                    break;
-
+                            switch ($page) {
                                 default:
-                                    include ('edit_profile.php');
+                                    include('view_all_orders.php');
+                                    break;
                             }
                             ?>
 

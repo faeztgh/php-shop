@@ -33,10 +33,10 @@ include('includes/navigation.php');
 
             <div class="col-lg-9">
 
-                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel" style="max-width: 900px">
                     <ol class="carousel-indicators">
                         <?php
-                        $count = 7;
+                        $count = 6;
                         for ($i = 0; $i < $count; $i++) {
                             echo "<li data-target='#carouselExampleIndicators' data-slide-to='$i'></li>";
                         }
@@ -56,8 +56,8 @@ include('includes/navigation.php');
                             $img = $car_row['p_image'];
 
 
-                            echo "<div class='carousel-item '>
-                                      <img class='d-block img-fluid' src='assets/img/products/{$img}' alt='$name'>
+                            echo "<div class='carousel-item'>
+                                      <img class='d-block img-fluid w-100' src='assets/img/products/{$img}' alt='$name'  style='height: 502px;'>
                                   </div>";
 
                             $count--;
@@ -110,8 +110,10 @@ include('includes/navigation.php');
                         $desc = substr($desc, 0, 150);
 
                         echo " <div class='col-lg-4 col-md-6 mb-4'>
-                                   <div class='card w-100' style='max-height: 523px'>
-                                    <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name' style='max-height: 400px'></a>
+                                   <div class='card w-100' style='max-height: 650px'>
+                                    <a href='single_product.php?id={$id}'>
+                                    <img class='card-img-top' src='assets/img/products/{$img}' alt='$name' style='height: 300px'>
+                                    </a>
                                        <div class='card-body'>
                                        <h4 class='card-title text-nowrap'>
                                            <a href='single_product.php?id={$id}'>$name</a>

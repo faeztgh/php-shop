@@ -89,6 +89,8 @@ if (isset($_SESSION['LOGGEDIN'])) {
                     <a class="dropdown-item" href="results.php?cat=laptop">Laptop</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="results.php?cat=tablet">Tablet</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="results.php?cat=smartWatch">Smart Watch</a>
                 </div>
                 <?php
                 echo $homeLink;

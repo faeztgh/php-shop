@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
     <!-- My Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" >
 
     <title><?php echo $page_title ?></title>
 </head>

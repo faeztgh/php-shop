@@ -71,6 +71,7 @@ if (isset($_POST, $_POST['editProfile'])) {
 
     if ($execRes) {
         $successMsg = "Your profile updated successfully";
+        header('location:edit_profile.php');
     } else {
         $errorMsg = "Oops! Something went wrong!";
     }

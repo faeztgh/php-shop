@@ -6,16 +6,13 @@ session_start();
 
 $msg = "";
 if (isset($_SESSION, $_SESSION['RESET_CODE'])) {
-
     $code = $_SESSION['RESET_CODE'];
-    print_r($code);
 }
 
 
 if (isset($_POST, $_POST['code'])) {
     if (isset($_POST['codeInput'])) {
         $receivedCode = $_POST['codeInput'];
-        print_r($receivedCode);
     }
 }
 
@@ -60,7 +57,7 @@ include('includes/head.php');
                                         <i class="fa fa-qrcode font-icon"></i>
                                         </span>
                                     </div>
-                                    <input class="form-control" type="text" id="code" name="codeInput"
+                                    <input class="form-control" type="text" id="code" name="codeInput" required
                                            placeholder="Code" style="direction: ltr">
                                 </div>
                                 <span id="emailAlert" class="alert-span"></span>

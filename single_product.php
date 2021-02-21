@@ -76,6 +76,12 @@ if (isset($_GET)) {
 
                         </ul>
                     </details>
+                    <?php
+                    echo " <form action='user/cart.php' method='post' class='align-self-end mb-0'>
+                        <input type='hidden' name='product_id' value='{$id}'>
+                        <button class='btn btn-outline-primary ' type='submit' name='addToCartSubmit'>Add to Cart <i class='fa fa-shopping-cart'></i></button>
+                    </form>";
+                    ?>
                 </div>
 
             </div>
@@ -122,13 +128,14 @@ if (isset($_GET)) {
 
                 <div class="col-md-3 col-sm-6 mb-4 d-flex flex-column align-items-center justify-content-center">
                     <a href="single_product.php?id=<?php echo $id ?>">
-                        <img class="img-fluid" src="assets/img/products/<?php echo $img ?>" alt="<?php echo $name ?>">
+                        <img class="img-fluid" src="assets/img/products/<?php echo $img ?>" alt="<?php echo $name ?>"
+                             style="height: 300px">
                     </a>
                     <a class="btn btn-link mt-1 " href="single_product.php?id=<?php echo $id ?>"><?php echo $name ?></a>
                 </div>
                 <?php
 
-                if ($counter >= 8) {
+                if ($counter >= 4) {
                     break;
                 }
             }

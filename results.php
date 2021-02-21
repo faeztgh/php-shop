@@ -83,11 +83,11 @@ include('includes/head.php');
                                 $brand = $productRow['p_brand'];
 
 
-                                $desc = substr($desc, 0, 200);
+                                $desc = substr($desc, 0, 150);
 
                                 echo " <div class='col-lg-4 col-md-6 mb-4'>
-                                   <div class='card h-100'>
-                                    <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name' style='max-height:400px'></a>
+                                   <div class='card'>
+                                    <a href='single_product.php?id={$id}'><img class='card-img-top' src='assets/img/products/{$img}' alt='$name' style='height: 300px'></a>
                                        <div class='card-body'>
                                        <h4 class='card-title'>
                                            <a href='single_product.php?id={$id}'>$name</a>
@@ -115,19 +115,19 @@ include('includes/head.php');
 
                 ?>
             </div>
+            <?php
+            if (isset($_GET['cat']) || isset($_GET['search'])) {
+                if ($stmt->rowCount() <= 0) {
+                    if (isset($_GET['cat'])) {
+                        echo "<div class='alert alert-info text-center'>No Result Found for \" $_GET[cat] \"</div>";
+                    } else if (isset($_GET['search'])) {
+                        echo "<div class='alert alert-info text-center'>No Result Found for \" $_GET[search] \"</div>";
+                    }
+                }
+            }
+            ?>
         </div>
     </div>
-    <?php
-    if (isset($_GET['cat']) || isset($_GET['search'])) {
-        if ($stmt->rowCount() <= 0) {
-            if (isset($_GET['cat'])) {
-                echo "<div class='alert alert-info text-center'>No Result Found for \" $_GET[cat] \"</div>";
-            } else if (isset($_GET['search'])) {
-                echo "<div class='alert alert-info text-center'>No Result Found for \" $_GET[search] \"</div>";
-            }
-        }
-    }
-    ?>
 </div>
 
 <!-- /.row -->

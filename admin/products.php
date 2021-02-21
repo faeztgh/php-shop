@@ -33,11 +33,8 @@ include('includes/sidebar.php');
                             case "viewOrders":
                                 include('view_all_orders.php');
                                 break;
-                            case "viewProducts":
-                                include('view_products.php');
-                                break;
                             default:
-                                include('error.php');
+                                include('view_products.php');
                                 break;
                         }
                         ?>

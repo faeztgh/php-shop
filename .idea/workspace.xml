@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710adbe5-c618-48ca-98af-8d79d7f37dc0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reset-password2.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reset-password3.php" beforeDir="false" afterPath="$PROJECT_DIR$/reset-password3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.php" beforeDir="false" afterPath="$PROJECT_DIR$/results.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/single_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/edit_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/edit_profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +28,8 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/includes/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
@@ -68,6 +84,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/includes/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/includes/vendor/composer" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1n9RiduIv3aXwxuNtRq092ttR69" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -143,6 +165,7 @@
       <workItem from="1612652476601" duration="3886000" />
       <workItem from="1612753388600" duration="2399000" />
       <workItem from="1613770177841" duration="18458000" />
+      <workItem from="1613880157731" duration="9985000" />
     </task>
     <servers />
   </component>

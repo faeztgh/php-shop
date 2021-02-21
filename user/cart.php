@@ -2,7 +2,8 @@
 
 require('../config/db.php');
 //Setting up cart
-$productId = $quantity = $successMsg = $errorMsg = "";
+
+$productId = $quantity = $successMsg = $id = $errorMsg = "";
 $productIdsArray = array();
 if (!isset($_SESSION)) {
     session_start();
@@ -57,7 +58,6 @@ $productsInCart = isset($_SESSION['CART']) ? $_SESSION['CART'] : array();
 $products = array();
 $totalPrice = 0.0;
 $totalItem = count($_SESSION['CART']) - 1;
-
 if ($productsInCart) {
     $array_to_question_marks = implode(',', array_fill(0, count($productsInCart), '?'));
     $query = "SELECT * FROM t_product WHERE p_id IN ($array_to_question_marks)";
@@ -73,11 +73,11 @@ if ($productsInCart) {
         array_push($productIdsArray, $id);
     }
 
-
 }
 
 
 // finish shopping
+
 if (isset($_POST['checkout'])) {
     $isPaid = "true";
     $paidDate = date("Y-m-d", time());
@@ -94,24 +94,28 @@ if (isset($_POST['checkout'])) {
     $stmt = $pdo->prepare($makeOrderQuery);
 
     if (!empty($productIdsArray)) {
-        $exec = $stmt->execute(['userId' => $userId, 'productId' => $productIdsArray, 'isPaid' => $isPaid, 'paidDate' => $paidDate,
-            'shippingPrice' => $shippingPrice, 'totalPrice' => $totalPrice, 'totalCount' => $productsInCart[$id]]);
+        if ( !empty($productsInCart[$id])) {
+            $exec = $stmt->execute(['userId' => $userId, 'productId' => $productIdsArray, 'isPaid' => $isPaid, 'paidDate' => $paidDate,
+                'shippingPrice' => $shippingPrice, 'totalPrice' => $totalPrice, 'totalCount' => $productsInCart[$id]]);
 
-        if ($exec) {
-            if (isset($_SESSION, $_SESSION['CART'])) {
+            if ($exec) {
+                if (isset($_SESSION, $_SESSION['CART'])) {
 
-                foreach ($_SESSION['CART'] as $k => $val) {
+                    foreach ($_SESSION['CART'] as $k => $val) {
 
-                    if ($k !== "USER_ID") {
-                        unset($_SESSION['CART'][$k]);
-                        header('location: cart.php?msg=completeShopping');
+                        if ($k !== "USER_ID") {
+                            unset($_SESSION['CART'][$k]);
+                            header('location: cart.php?msg=completeShopping');
+                        }
                     }
+
+
                 }
-
-
+            } else {
+                $errorMsg = "Sth went wrong on making order :(";
             }
         } else {
-            $errorMsg = "Sth went wrong on making order :(";
+            $errorMsg = "Please add product to your cart first";
         }
     } else {
         echo "No product exist";
@@ -150,7 +154,7 @@ if (isset($_GET, $_GET['msg'])) {
                 echo "<div class='alert alert-success text-center'> $successMsg</div>";
             }
             if (!empty($errorMsg)) {
-                echo "<div class='alert alert-success text-center'>$errorMsg</div>";
+                echo "<div class='alert alert-danger text-center'>$errorMsg</div>";
             }
             ?>
             <div class="title">

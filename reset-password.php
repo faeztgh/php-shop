@@ -15,7 +15,6 @@ $msg = "";
 if (isset($_POST, $_POST['resetPass'])) {
     if (isset($_POST['email'])) {
         $email = trim(htmlspecialchars($_POST['email']));
-        print_r($email);
 
         $code = rand(10000, 9999999);
 
@@ -25,41 +24,52 @@ if (isset($_POST, $_POST['resetPass'])) {
         //Instantiation and passing `true` enables exceptions
         $mail = new PHPMailer(true);
 
-        try {
-            //Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'supp.shop2021@gmail.com';
-            $mail->Password = 'S12345678P';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;
 
-            //Recipients
-            $mail->setFrom('supp.shop2021@gmail.com', 'F&Co. Shop');
-            $mail->addAddress($email);
+        // Check for email existence query
+        $query = "SELECT u_id FROM t_user WHERE u_email= :email";
+
+        if ($stmt = $pdo->prepare($query)) {
+            $stmt->execute(['email' => $email]);
+            if ($stmt->rowCount() == 0) {
+                $msg = "<div class='alert alert-danger'>User Not Exist!</div>";
+            } else {
+
+                try {
+                    //Server settings
+                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';
+                    $mail->SMTPAuth = true;
+                    $mail->Username = 'supp.shop2021@gmail.com';
+                    $mail->Password = 'S12345678P';
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                    $mail->Port = 587;
+
+                    //Recipients
+                    $mail->setFrom('supp.shop2021@gmail.com', 'F&Co. Shop');
+                    $mail->addAddress($email);
 
 
-            //Content
-            $mail->isHTML(true);
-            $mail->Subject = 'Reset Password Code';
-            $mail->Body = 'Your reset password code is: <b>' . $code . '</b>';
+                    //Content
+                    $mail->isHTML(true);
+                    $mail->Subject = 'Reset Password Code';
+                    $mail->Body = 'Your reset password code is: <b>' . $code . '</b>';
 
-            $mail->send();
-            $msg = '<div class="alert alert-success">Message has been sent</div>';
+                    $mail->send();
+                    $msg = '<div class="alert alert-success">Message has been sent</div>';
 
-            // set the code in session
-            $_SESSION['RESET_CODE'] = $code;
-            $_SESSION['RESET_EMAIL'] = $email;
+                    // set the code in session
+                    $_SESSION['RESET_CODE'] = $code;
+                    $_SESSION['RESET_EMAIL'] = $email;
 
-            // resirect to next step
-            header("location: reset-password2.php");
-        } catch (Exception $e) {
-            $msg = "<div class='alert alert-danger'>Message could not be sent email!</div>";
+                    // resirect to next step
+                    header("location: reset-password2.php");
+                } catch (Exception $e) {
+                    $msg = "<div class='alert alert-danger'>Message could not be sent email!</div>";
+                }
+
+            }
         }
-
-
     }
 }
 ?>
