@@ -58,7 +58,7 @@ if (isset($_SESSION['LOGGEDIN'])) {
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky " style="z-index: 999;top: 0;">
 
     <div class='navbar-brand'>
-        <a href='index.php'>
+        <a href='<?php echo BASE_URL?>'>
             <?php
             if (file_exists("assets/img/logo.png")) {
                 echo "<img src='assets/img/logo.png' alt='Logo'>";
