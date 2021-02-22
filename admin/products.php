@@ -21,7 +21,7 @@ include('includes/sidebar.php');
         <div class="container-fluid">
             <div class="animated fadeIn">
                 <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="col-lg-9 col-md-6 col-xs-12">
                         <?php
                         switch ($currPage) {
                             case "addProduct":

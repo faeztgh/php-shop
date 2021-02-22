@@ -72,7 +72,6 @@ if ($productsInCart) {
         // also push the chosen products id in the array
         array_push($productIdsArray, $id);
     }
-
 }
 
 
@@ -82,45 +81,48 @@ if (isset($_POST['checkout'])) {
     $isPaid = "true";
     $paidDate = date("Y-m-d", time());
     $shippingPrice = 0.0;
-    $productIdsArray = json_encode($productIdsArray);
 
     if (isset($_SESSION) && isset($_SESSION['ID'])) {
         $userId = $_SESSION['ID'];
     }
+    foreach ($products as $product) {
 
-    $makeOrderQuery = "INSERT INTO t_order (o_userId, o_productId, o_isPaid, o_paidDate, o_shippingPrice, o_totalPrice, o_count)
+        $makeOrderQuery = "INSERT INTO t_order (o_userId, o_productId, o_isPaid, o_paidDate, o_shippingPrice, o_totalPrice, o_count)
                                 VALUES (:userId,:productId,:isPaid,:paidDate,:shippingPrice,:totalPrice,:totalCount)";
 
-    $stmt = $pdo->prepare($makeOrderQuery);
+        $stmt = $pdo->prepare($makeOrderQuery);
 
-    if (!empty($productIdsArray)) {
-        if ( !empty($productsInCart[$id])) {
-            $exec = $stmt->execute(['userId' => $userId, 'productId' => $productIdsArray, 'isPaid' => $isPaid, 'paidDate' => $paidDate,
-                'shippingPrice' => $shippingPrice, 'totalPrice' => $totalPrice, 'totalCount' => $productsInCart[$id]]);
-
-            if ($exec) {
-                if (isset($_SESSION, $_SESSION['CART'])) {
-
-                    foreach ($_SESSION['CART'] as $k => $val) {
-
-                        if ($k !== "USER_ID") {
-                            unset($_SESSION['CART'][$k]);
-                            header('location: cart.php?msg=completeShopping');
-                        }
-                    }
-
+        if (!empty($productIdsArray)) {
+            if (!empty($productsInCart[$id])) {
+                $exec = null;
+                if (is_array($productIdsArray) || is_object($productIdsArray)) {
+                    $exec = $stmt->execute(['userId' => $userId, 'productId' => $product['p_id'], 'isPaid' => $isPaid, 'paidDate' => $paidDate,
+                        'shippingPrice' => $shippingPrice, 'totalPrice' => $product['p_price'], 'totalCount' => $productsInCart[$id]]);
 
                 }
+
+                if ($exec) {
+                    if (isset($_SESSION, $_SESSION['CART'])) {
+
+                        foreach ($_SESSION['CART'] as $k => $val) {
+
+                            if ($k !== "USER_ID") {
+                                unset($_SESSION['CART'][$k]);
+                                header('location: cart.php?msg=completeShopping');
+                            }
+                        }
+                    }
+                } else {
+                    $errorMsg = "Sth went wrong on making order :(";
+                }
             } else {
-                $errorMsg = "Sth went wrong on making order :(";
+                $errorMsg = "Please add product to your cart first";
             }
         } else {
-            $errorMsg = "Please add product to your cart first";
+            echo "No product exist";
         }
-    } else {
-        echo "No product exist";
-    }
 
+    }
 }
 
 // set complete shopping msg

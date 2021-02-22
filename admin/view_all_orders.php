@@ -48,7 +48,6 @@ include('../config/db.php');
             }
 
             // Retrieve products in DB
-            $order_productId = json_decode($order_productId)[0];
             $select_all_products_query = "SELECT * FROM t_product WHERE p_id=:p_id";
             $p_stmt = $pdo->prepare($select_all_products_query);
             $p_stmt->execute(['p_id' => $order_productId]);
@@ -64,11 +63,11 @@ include('../config/db.php');
                 echo "<td>{$order_id}</td>";
                 echo "<td class='text-capitalize'>{$userFullname}</td>";
                 echo "<td>{$product_name}</td>";
-                echo "<td>{$order_count}</td>";
+                echo "<td class='text-center'>{$order_count}</td>";
                 echo "<td>{$order_orderDate}</td>";
                 echo "<td>{$order_isPaid}</td>";
                 echo "<td> {$order_paidDate}</td>";
-                echo "<td> {$order_shippingPrice}</td>";
+                echo "<td class='text-center'> {$order_shippingPrice}</td>";
                 echo "<td> {$order_totalPrice}</td>";
 
 

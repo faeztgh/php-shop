@@ -114,7 +114,8 @@ include('includes/head.php');
                 </div>
                 <div class="card-body">
 
-                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
+                          onsubmit="return(loginFormValidation());">
                         <?php
                         if (!empty($error)) {
                             echo " <div class='alert alert-danger text-center'>$error</div>";
@@ -137,6 +138,7 @@ include('includes/head.php');
                                 <input class="form-control" type="text" id="username" name="username"
                                        placeholder="Username" style="direction: ltr">
                             </div>
+                            <span id="usernameAlert" class="alert-span"></span>
                         </div>
 
                         <!--Password-->
@@ -152,6 +154,7 @@ include('includes/head.php');
                                        placeholder="Password">
                             </div>
                             <a href="reset-password.php" class="btn btn-link">Forgot Password?</a>
+                            <span id="passwordAlert" class="alert-span d-inline-block"></span>
                         </div>
 
 
@@ -170,6 +173,9 @@ include('includes/head.php');
 
 
 <!-- Scripts -->
+
+
+<script src="assets/js/script.js"></script>
 
 <script>
     // remove welcome message of new user after certain time ;

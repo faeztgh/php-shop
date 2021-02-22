@@ -1,6 +1,6 @@
 <?php
 
-// this function will loggin user out if it was inactive for specific seconds
+// this function will logging user out if it was inactive for specific seconds
 function clearSessionWhileInactive($timeout)
 {
     if (isset($_SESSION["LAST_ACTIVITY"]) && (time() - $_SESSION["LAST_ACTIVITY"] > $timeout)) {

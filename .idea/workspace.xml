@@ -4,46 +4,19 @@
     <list default="true" id="710adbe5-c618-48ca-98af-8d79d7f37dc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/Readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/about.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/apple-touch-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/clients/client-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/cta-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/features-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/features-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/features-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/hero-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio-details-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio-details-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio-details-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/portfolio/portfolio-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/team/team-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/team/team-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/team/team-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/team/team-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials/testimonials-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials/testimonials-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials/testimonials-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials/testimonials-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/assets/img/testimonials/testimonials-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/changelog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/inner-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/portfolio-details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view_all_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view_all_orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/includes/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/includes/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/edit_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/edit_profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/view_all_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/view_all_orders.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,10 +24,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/includes/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -89,7 +62,7 @@
         <item name="ecommerce@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ecommerce: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="t_product: table" type="dbc44a63:MariaImplModel$Table" />
+        <item name="t_user: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -122,24 +95,24 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/assets/js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\user\assets\js" />
+      <recent name="C:\xampp\htdocs\ecommerce" />
+      <recent name="C:\xampp\htdocs\ecommerce\user" />
+      <recent name="C:\xampp\htdocs\ecommerce\assets\css" />
+      <recent name="C:\xampp\htdocs\ecommerce\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ecommerce\includes" />
       <recent name="C:\xampp\htdocs\ecommerce\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\assets\css" />
       <recent name="C:\xampp\htdocs\ecommerce\includes\home" />
-      <recent name="C:\xampp\htdocs\ecommerce\assets\img" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ecommerce" />
-      <recent name="C:\xampp\htdocs\ecommerce\user" />
-      <recent name="C:\xampp\htdocs\ecommerce\assets\css" />
-      <recent name="C:\xampp\htdocs\ecommerce\assets" />
       <recent name="C:\xampp\htdocs\ecommerce\assets\img" />
     </key>
   </component>
@@ -189,6 +162,8 @@
       <workItem from="1612753388600" duration="2399000" />
       <workItem from="1613770177841" duration="18458000" />
       <workItem from="1613880157731" duration="10649000" />
+      <workItem from="1613971134551" duration="4142000" />
+      <workItem from="1613977033976" duration="3436000" />
     </task>
     <servers />
   </component>

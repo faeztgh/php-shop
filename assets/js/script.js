@@ -54,3 +54,33 @@ function registerFormValidation() {
 
     return true;
 }
+
+function loginFormValidation() {
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+
+    const usernameAlert = document.getElementById("usernameAlert");
+    const passwordAlert = document.getElementById("passwordAlert");
+
+    if (username.value === "") {
+        usernameAlert.innerText = "Please enter your username";
+        username.focus();
+        return false;
+
+    } else {
+        usernameAlert.innerText = "";
+    }
+
+
+    if (password.value === "") {
+        passwordAlert.innerText = "Please enter your password";
+        password.focus();
+        return false;
+    } else {
+        passwordAlert.innerText = "";
+    }
+
+    return true;
+}
+
+

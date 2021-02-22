@@ -102,7 +102,7 @@ include('includes/sidebar.php');
                         </div>
                         <div class="card-body">
                             <form id="editProfileForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
-                                  onsubmit="return(registerFormValidation());">
+                                  onsubmit="return(editProfileFormValidation());">
                                 <?php
                                 if (!empty($errorMsg)) {
                                     echo " <div class='alert alert-danger text-center'>$errorMsg</div>";
@@ -140,7 +140,7 @@ include('includes/sidebar.php');
                                                value="<?php echo $lastName ?>"
                                                placeholder="Lastname">
                                     </div>
-                                    <span id="nameAlert" class="alert-span"></span>
+                                    <span id="lastNameAlert" class="alert-span"></span>
                                 </div>
 
                                 <div class="form-group">
@@ -157,7 +157,7 @@ include('includes/sidebar.php');
                                                minlength="10"
                                                placeholder="Phone">
                                     </div>
-                                    <span id="nameAlert" class="alert-span"></span>
+                                    <span id="phoneNoAlert" class="alert-span"></span>
                                 </div>
 
 
@@ -219,7 +219,7 @@ include('includes/sidebar.php');
                                         <textarea class="form-control" type="text" id="address" name="address" rows="5"
                                                   placeholder="Address"><?php echo $address ?></textarea>
                                     </div>
-                                    <span id="nameAlert" class="alert-span"></span>
+                                    <span id="addressAlert" class="alert-span"></span>
                                 </div>
 
                                 <button class="btn btn-dark btn-block font-weight-bold font-md mt-5" type="submit"
@@ -236,6 +236,8 @@ include('includes/sidebar.php');
         </div>
     </div>
 </div>
+
+<script src="assets/js/script.js"></script>
 
 <?php
 include('includes/tail.php');
