@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="710adbe5-c618-48ca-98af-8d79d7f37dc0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/includes/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navigation.php" afterDir="false" />
-    </list>
+    <list default="true" id="710adbe5-c618-48ca-98af-8d79d7f37dc0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +147,7 @@
       <workItem from="1613770177841" duration="18458000" />
       <workItem from="1613880157731" duration="10649000" />
       <workItem from="1613971134551" duration="4142000" />
-      <workItem from="1613977033976" duration="3688000" />
+      <workItem from="1613977033976" duration="3766000" />
     </task>
     <servers />
   </component>
