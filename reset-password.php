@@ -40,8 +40,8 @@ if (isset($_POST, $_POST['resetPass'])) {
                     $mail->isSMTP();
                     $mail->Host = 'smtp.gmail.com';
                     $mail->SMTPAuth = true;
-                    $mail->Username = 'supp.shop2021@gmail.com';
-                    $mail->Password = 'S12345678P';
+                    $mail->Username = 'email';
+                    $mail->Password = 'password';
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                     $mail->Port = 587;
 
